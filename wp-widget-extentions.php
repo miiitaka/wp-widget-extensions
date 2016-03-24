@@ -24,7 +24,8 @@ class WP_Widget_Extensions {
 	/**
 	 * Variable definition.
 	 *
-	 * @since 1.0.0
+	 * @since   1.0.0
+	 * @version 1.0.0
 	 */
 	private $text_domain = 'wp-widget-extensions';
 
@@ -46,6 +47,5 @@ class WP_Widget_Extensions {
 	 */
 	public function widget_init () {
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-categories.php' );
-		register_widget( 'WP_Widget_Extensions_Categories' );
 	}
 }
