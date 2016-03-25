@@ -110,8 +110,13 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 	 */
 	public function widget ( $args, $instance ) {
 		$this->instance = $instance;
-		add_filter( 'widget_categories_args', array( $this, 'widget_categories_args' ) );
 
+		$d = ! empty( $instance['dropdown'] ) ? '1' : '0';
+		if ( $d ) {
+			add_filter( 'widget_categories_dropdown_args', array( $this, 'widget_categories_args' ) );
+		} else {
+			add_filter( 'widget_categories_args', array( $this, 'widget_categories_args' ) );
+		}
 		parent::widget( $args, $instance );
 	}
 
