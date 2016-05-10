@@ -16,8 +16,8 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 	/**
 	 * Variable definition.
 	 *
-	 * @since   1.0.0
 	 * @version 1.0.0
+	 * @since   1.0.0
 	 */
 	private $text_domain = 'wp-widget-extensions';
 	private $instance    = array();
@@ -25,8 +25,8 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 	/**
 	 * Widget Form Display.
 	 *
-	 * @since   1.0.0
 	 * @version 1.0.0
+	 * @since   1.0.0
 	 * @access  public
 	 * @param   array $instance
 	 * @return  string Parent::Default return is 'noform'
@@ -83,8 +83,8 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 	/**
 	 * Widget Form Update.
 	 *
-	 * @since   1.0.0
 	 * @version 1.0.0
+	 * @since   1.0.0
 	 * @access  public
 	 * @param   array $new_instance
 	 * @param   array $old_instance
@@ -100,31 +100,10 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 	}
 
 	/**
-	 * Widget Display.
-	 *
-	 * @since   1.0.0
-	 * @version 1.0.0
-	 * @access  public
-	 * @param   array $args
-	 * @param   array $instance
-	 */
-	public function widget ( $args, $instance ) {
-		$this->instance = $instance;
-
-		$d = ! empty( $instance['dropdown'] ) ? '1' : '0';
-		if ( $d ) {
-			add_filter( 'widget_categories_dropdown_args', array( $this, 'widget_categories_args' ) );
-		} else {
-			add_filter( 'widget_categories_args', array( $this, 'widget_categories_args' ) );
-		}
-		parent::widget( $args, $instance );
-	}
-
-	/**
 	 * Widget Categories Args
 	 *
-	 * @since   1.0.0
 	 * @version 1.0.0
+	 * @since   1.0.0
 	 * @access  public
 	 * @param   array $cat_args
 	 * @return  array $cat_args
@@ -143,5 +122,26 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 		}
 
 		return (array) $cat_args;
+	}
+
+	/**
+	 * Widget Display.
+	 *
+	 * @version 1.0.0
+	 * @since   1.0.0
+	 * @access  public
+	 * @param   array $args
+	 * @param   array $instance
+	 */
+	public function widget ( $args, $instance ) {
+		$this->instance = $instance;
+
+		$d = ! empty( $instance['dropdown'] ) ? '1' : '0';
+		if ( $d ) {
+			add_filter( 'widget_categories_dropdown_args', array( $this, 'widget_categories_args' ) );
+		} else {
+			add_filter( 'widget_categories_args', array( $this, 'widget_categories_args' ) );
+		}
+		parent::widget( $args, $instance );
 	}
 }

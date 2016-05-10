@@ -16,24 +16,24 @@ new WP_Widget_Extensions();
  * Basic Class
  *
  * @author  Kazuya Takami
- * @since   1.0.0
  * @version 1.0.0
+ * @since   1.0.0
  */
 class WP_Widget_Extensions {
 
 	/**
 	 * Variable definition.
 	 *
-	 * @since   1.0.0
 	 * @version 1.0.0
+	 * @since   1.0.0
 	 */
 	private $text_domain = 'wp-widget-extensions';
 
 	/**
 	 * Constructor Define.
 	 *
-	 * @since   1.0.0
 	 * @version 1.0.0
+	 * @since   1.0.0
 	 */
 	public function __construct () {
 		add_action( 'widgets_init',   array( $this, 'widget_init' ) );
@@ -42,8 +42,8 @@ class WP_Widget_Extensions {
 	/**
 	 * Widget Register.
 	 *
-	 * @since   1.0.0
 	 * @version 1.0.0
+	 * @since   1.0.0
 	 */
 	public function widget_init () {
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-categories.php' );
