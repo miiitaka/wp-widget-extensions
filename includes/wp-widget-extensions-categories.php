@@ -45,14 +45,14 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 
 		$id   = $this->get_field_id( 'orderby' );
 		$name = $this->get_field_name( 'orderby' );
-		$orderby_array  = array(
+		$sort_array = array(
 			"name"  => esc_html__( "Name of the order",  $this->text_domain ),
 			"count" => esc_html__( "Posts of the order", $this->text_domain )
 		);
 
-		echo '<p><label for="' . $id . '">' . esc_html__( 'Sorted by', $this->text_domain ) . ':</label><br>';
+		echo '<p><label for="' . $id . '">' . esc_html__( 'Sort by', $this->text_domain ) . ':</label><br>';
 		printf( '<select id="%s" name="%s" class="widefat">', $id, $name );
-		foreach ( $orderby_array as $key => $row ) {
+		foreach ( $sort_array as $key => $row ) {
 			if ( $key == $instance['orderby'] ) {
 				printf( '<option value="%s" selected="selected">%s</option>', $key, esc_html( $row ) );
 			} else {
@@ -68,7 +68,7 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 			"desc" => esc_html__( "Descending order", $this->text_domain )
 		);
 
-		echo '<p><label for="' . $id . '">' . esc_html__( 'Sorted by', $this->text_domain ) . ':</label><br>';
+		echo '<p><label for="' . $id . '">' . esc_html__( 'Order by', $this->text_domain ) . ':</label><br>';
 		printf( '<select id="%s" name="%s" class="widefat">', $id, $name );
 		foreach ( $order_array as $key => $row ) {
 			if ( $key == $instance['order'] ) {
