@@ -50,10 +50,32 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 	public function update ( $new_instance, $old_instance ) {
 		$instance = parent::update( $new_instance, $old_instance );
 
-		//$instance['orderby'] = isset( $new_instance['orderby'] ) ? $new_instance['orderby'] : "";
-		//$instance['order']   = isset( $new_instance['order'] )   ? $new_instance['order']   : "";
+		$instance['type']  = isset( $new_instance['type'] )  ? $new_instance['type']  : "";
+		$instance['order'] = isset( $new_instance['order'] ) ? $new_instance['order'] : "";
+		$instance['limit'] = isset( $new_instance['limit'] ) ? $new_instance['limit'] : "";
 
 		return (array) $instance;
+	}
+
+	/**
+	 * Widget Archives Args
+	 *
+	 * @version 1.0.0
+	 * @since   1.0.0
+	 * @access  public
+	 * @param   array $archive_args
+	 * @return  array $archive_args
+	 */
+	public function widget_archives_args ( $archive_args ) {
+		//$archive_args['type'] = 'monthly';
+		//$archive_args['type'] = 'yearly';
+		//$archive_args['type'] = 'daily';
+		$archive_args['type'] = 'weekly';
+		//$archive_args['order'] = 'DESC';
+		$archive_args['order'] = 'ASC';
+		$archive_args['limit'] = 5;
+
+		return (array) $archive_args;
 	}
 
 	/**
@@ -67,6 +89,13 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 	 */
 	public function widget ( $args, $instance ) {
 		$this->instance = $instance;
+
+		$d = ! empty( $instance['dropdown'] ) ? '1' : '0';
+		if ( $d ) {
+			add_filter( 'widget_archives_dropdown_args', array( $this, 'widget_archives_args' ) );
+		} else {
+			add_filter( 'widget_archives_args', array( $this, 'widget_archives_args' ) );
+		}
 		parent::widget( $args, $instance );
 	}
 }
