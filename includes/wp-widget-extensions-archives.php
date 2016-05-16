@@ -67,12 +67,12 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 	 * @return  array $archive_args
 	 */
 	public function widget_archives_args ( $archive_args ) {
-		//$archive_args['type'] = 'monthly';
+		$archive_args['type'] = 'monthly';
 		//$archive_args['type'] = 'yearly';
 		//$archive_args['type'] = 'daily';
-		$archive_args['type'] = 'weekly';
-		//$archive_args['order'] = 'DESC';
-		$archive_args['order'] = 'ASC';
+		//$archive_args['type'] = 'weekly';
+		$archive_args['order'] = 'DESC';
+		//$archive_args['order'] = 'ASC';
 		$archive_args['limit'] = 5;
 
 		return (array) $archive_args;
