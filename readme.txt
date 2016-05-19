@@ -1,14 +1,25 @@
 === WordPress Default Widget Extension ===
 Contributors: miiitaka
-Tags: widget category, tag, calendar, archive
-Requires at least: 4.2.2
-Tested up to: 4.4.2
+Tags: widget, category, archive
+Requires at least: 4.5.2
+Tested up to: 4.5.2
 Stable tag: 1.0.0
 
-Plug-in Posted Display Widget & ShortCode Add. You can also save and display your browsing history to Cookie.
+Plug-ins that extend the standard of the widget function.
 
 == Description ==
 
+Plug-ins that extend the standard of the widget function.
+
+= Archives Widget =
+
+* Changing the units of the archive
+* Ascending / descending order change
+
+= Categories Widget =
+
+* Criteria change of the sort (Name order / Posts order)
+* Ascending / descending order change
 
 == Installation ==
 

@@ -22,14 +22,6 @@ new WP_Widget_Extensions();
 class WP_Widget_Extensions {
 
 	/**
-	 * Variable definition.
-	 *
-	 * @version 1.0.0
-	 * @since   1.0.0
-	 */
-	private $text_domain = 'wp-widget-extensions';
-
-	/**
 	 * Constructor Define.
 	 *
 	 * @version 1.0.0
