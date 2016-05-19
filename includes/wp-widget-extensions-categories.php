@@ -36,13 +36,12 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 		
 		echo '<hr>';
 
+		/**
+		 * OrderBy Element
+		 */
 		if ( !isset( $instance['orderby'] ) ) {
 			$instance['orderby'] = "";
 		}
-		if ( !isset( $instance['order'] ) ) {
-			$instance['order'] = "";
-		}
-
 		$id   = $this->get_field_id( 'orderby' );
 		$name = $this->get_field_name( 'orderby' );
 		$sort_array = array(
@@ -61,6 +60,12 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 		}
 		echo '</select></p>';
 
+		/**
+		 * Order Element
+		 */
+		if ( !isset( $instance['order'] ) ) {
+			$instance['order'] = "";
+		}
 		$id   = $this->get_field_id( 'order' );
 		$name = $this->get_field_name( 'order' );
 		$order_array  = array(
