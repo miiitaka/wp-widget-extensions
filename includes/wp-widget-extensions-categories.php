@@ -40,7 +40,7 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 		 * OrderBy Element
 		 */
 		if ( !isset( $instance['orderby'] ) ) {
-			$instance['orderby'] = "";
+			$instance['orderby'] = "name";
 		}
 		$id   = $this->get_field_id( 'orderby' );
 		$name = $this->get_field_name( 'orderby' );
@@ -64,7 +64,7 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 		 * Order Element
 		 */
 		if ( !isset( $instance['order'] ) ) {
-			$instance['order'] = "";
+			$instance['order'] = "asc";
 		}
 		$id   = $this->get_field_id( 'order' );
 		$name = $this->get_field_name( 'order' );
@@ -110,23 +110,18 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 	 * @version 1.0.0
 	 * @since   1.0.0
 	 * @access  public
-	 * @param   array $cat_args
-	 * @return  array $cat_args
+	 * @param   array $args
+	 * @return  array $args
 	 */
-	public function widget_categories_args ( $cat_args ) {
+	public function widget_categories_args ( $args ) {
 		if ( isset( $this->instance['orderby'] ) ) {
-			switch ( $this->instance['orderby'] ) {
-				case 'count':
-					$cat_args['orderby'] = 'count';
-					break;
-			}
+			$args['orderby'] = $this->instance['orderby'];
+		}
+		if ( isset( $this->instance['order'] ) ) {
+			$args['order'] = $this->instance['order'];
 		}
 
-		if ( isset( $this->instance['order'] ) && $this->instance['order'] === 'desc' ) {
-			$cat_args['order'] = 'DESC';
-		}
-
-		return (array) $cat_args;
+		return (array) $args;
 	}
 
 	/**
