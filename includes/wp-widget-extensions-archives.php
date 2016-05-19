@@ -35,6 +35,68 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 		parent::form( $instance );
 		
 		echo '<hr>';
+
+		/**
+		 * Type Element
+		 */
+		if ( !isset( $instance['type'] ) ) {
+			$instance['type'] = "monthly";
+		}
+		$type_array = array(
+			"daily"   => esc_html__( "Daily",   $this->text_domain ),
+			"weekly"  => esc_html__( "Weekly",  $this->text_domain ),
+			"monthly" => esc_html__( "Monthly", $this->text_domain ),
+			"yearly"  => esc_html__( "Yearly",  $this->text_domain )
+		);
+		$id   = $this->get_field_id( 'type' );
+		$name = $this->get_field_name( 'type' );
+
+		echo '<p><label for="' . $id . '">' . esc_html__( 'Type', $this->text_domain ) . ':</label><br>';
+		printf( '<select id="%s" name="%s" class="widefat">', $id, $name );
+		foreach ( $type_array as $key => $row ) {
+			if ( $key == $instance['type'] ) {
+				printf( '<option value="%s" selected="selected">%s</option>', $key, esc_html( $row ) );
+			} else {
+				printf( '<option value="%s">%s</option>', $key, esc_html( $row ) );
+			}
+		}
+		echo '</select></p>';
+
+		/**
+		 * Order Element
+		 */
+		if ( !isset( $instance['order'] ) ) {
+			$instance['order'] = "desc";
+		}
+		$order_array  = array(
+			"asc"  => esc_html__( "Ascending order",  $this->text_domain ),
+			"desc" => esc_html__( "Descending order", $this->text_domain )
+		);
+		$id   = $this->get_field_id( 'order' );
+		$name = $this->get_field_name( 'order' );
+
+		echo '<p><label for="' . $id . '">' . esc_html__( 'Order by', $this->text_domain ) . ':</label><br>';
+		printf( '<select id="%s" name="%s" class="widefat">', $id, $name );
+		foreach ( $order_array as $key => $row ) {
+			if ( $key == $instance['order'] ) {
+				printf( '<option value="%s" selected="selected">%s</option>', $key, esc_html( $row ) );
+			} else {
+				printf( '<option value="%s">%s</option>', $key, esc_html( $row ) );
+			}
+		}
+		echo '</select></p>';
+
+		/**
+		 * Limit Element
+		 */
+		if ( !isset( $instance['limit'] ) ) {
+			$instance['limit'] = 0;
+		}
+		$id   = $this->get_field_id( 'limit' );
+		$name = $this->get_field_name( 'limit' );
+		echo '<p><label for="' . $id . '">' . esc_html__( 'Number of archive to show', $this->text_domain ) . ':&nbsp;</label>';
+		printf( '<input type="number" id="%s" name="%s" value="%s" class="small-text">', $id, $name, esc_attr( $instance['limit'] ) );
+		echo '</p>';
 	}
 
 	/**
@@ -50,8 +112,8 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 	public function update ( $new_instance, $old_instance ) {
 		$instance = parent::update( $new_instance, $old_instance );
 
-		$instance['type']  = isset( $new_instance['type'] )  ? $new_instance['type']  : "";
-		$instance['order'] = isset( $new_instance['order'] ) ? $new_instance['order'] : "";
+		$instance['type']  = isset( $new_instance['type'] )  ? $new_instance['type']  : "monthly";
+		$instance['order'] = isset( $new_instance['order'] ) ? $new_instance['order'] : "desc";
 		$instance['limit'] = isset( $new_instance['limit'] ) ? $new_instance['limit'] : "";
 
 		return (array) $instance;
@@ -63,19 +125,25 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 	 * @version 1.0.0
 	 * @since   1.0.0
 	 * @access  public
-	 * @param   array $archive_args
-	 * @return  array $archive_args
+	 * @param   array $args
+	 * @return  array $args
 	 */
-	public function widget_archives_args ( $archive_args ) {
-		$archive_args['type'] = 'monthly';
-		//$archive_args['type'] = 'yearly';
-		//$archive_args['type'] = 'daily';
-		//$archive_args['type'] = 'weekly';
-		$archive_args['order'] = 'DESC';
-		//$archive_args['order'] = 'ASC';
-		$archive_args['limit'] = 5;
+	public function widget_archives_args ( $args ) {
+		if ( isset( $this->instance['type'] ) ) {
+			$args['type'] = $this->instance['type'];
+		}
+		if ( isset( $this->instance['order'] ) ) {
+			$args['order'] = $this->instance['order'];
+		}
+		if ( isset( $this->instance['limit'] ) ) {
+			if ( $this->instance['limit'] == 0 ) {
+				$args['limit'] = "";
+			} else {
+				$args['limit'] = $this->instance['limit'];
+			}
+		}
 
-		return (array) $archive_args;
+		return (array) $args;
 	}
 
 	/**
