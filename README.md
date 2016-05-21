@@ -14,3 +14,9 @@ Plug-ins that extend the standard of the widget function.
 
 - Criteria change of the sort (Name order / Posts order)
 - Ascending / descending order change
+
+## Changelog
+
+### 1.0.0 (2016-xx-xx)
+
+- The first release.
