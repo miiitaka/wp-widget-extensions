@@ -1,6 +1,8 @@
 # default-widget-extentions
 WordPress : Plug-in Default Widget Extentions. 
 
+Plug-ins that extend the standard of the widget function.
+
 ## Description
 
 Plug-ins that extend the standard of the widget function.
