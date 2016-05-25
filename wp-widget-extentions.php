@@ -40,5 +40,6 @@ class WP_Widget_Extensions {
 	public function widget_init () {
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-archives.php' );
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-categories.php' );
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-tag-cloud.php' );
 	}
 }
