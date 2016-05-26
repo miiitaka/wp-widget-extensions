@@ -64,13 +64,13 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 		 * Order Element
 		 */
 		if ( !isset( $instance['order'] ) ) {
-			$instance['order'] = "asc";
+			$instance['order'] = "ASC";
 		}
 		$id   = $this->get_field_id( 'order' );
 		$name = $this->get_field_name( 'order' );
 		$order_array  = array(
-			"asc"  => esc_html__( "Ascending order",  $this->text_domain ),
-			"desc" => esc_html__( "Descending order", $this->text_domain )
+			"ASC"  => esc_html__( "Ascending order",  $this->text_domain ),
+			"DESC" => esc_html__( "Descending order", $this->text_domain )
 		);
 
 		echo '<p><label for="' . $id . '">' . esc_html__( 'Order by', $this->text_domain ) . ':</label><br>';
