@@ -66,7 +66,7 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 		 * Order Element
 		 */
 		if ( !isset( $instance['order'] ) ) {
-			$instance['order'] = "desc";
+			$instance['order'] = "DESC";
 		}
 		$order_array  = array(
 			"ASC"  => esc_html__( "Ascending order",  $this->text_domain ),

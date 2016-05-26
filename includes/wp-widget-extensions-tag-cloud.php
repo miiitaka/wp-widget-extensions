@@ -45,8 +45,8 @@ class WP_Widget_Extensions_Tag_Cloud extends WP_Widget_Tag_Cloud {
 		$id   = $this->get_field_id( 'orderby' );
 		$name = $this->get_field_name( 'orderby' );
 		$sort_array = array(
-			"name"  => esc_html__( "Name of the order",  $this->text_domain ),
-			"count" => esc_html__( "Tag Count of the order", $this->text_domain )
+			"name"  => esc_html__( "Name order",  $this->text_domain ),
+			"count" => esc_html__( "Tag Count order", $this->text_domain )
 		);
 
 		echo '<p><label for="' . $id . '">' . esc_html__( 'Sort by', $this->text_domain ) . ':</label><br>';
