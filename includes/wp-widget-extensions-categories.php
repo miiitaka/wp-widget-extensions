@@ -98,8 +98,8 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 	public function update ( $new_instance, $old_instance ) {
 		$instance = parent::update( $new_instance, $old_instance );
 
-		$instance['orderby'] = isset( $new_instance['orderby'] ) ? $new_instance['orderby'] : "";
-		$instance['order']   = isset( $new_instance['order'] )   ? $new_instance['order']   : "";
+		$instance['orderby'] = sanitize_text_field( $new_instance['orderby'] );
+		$instance['order']   = sanitize_text_field( $new_instance['order'] );
 
 		return (array) $instance;
 	}

@@ -112,9 +112,9 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 	public function update ( $new_instance, $old_instance ) {
 		$instance = parent::update( $new_instance, $old_instance );
 
-		$instance['type']  = isset( $new_instance['type'] )  ? $new_instance['type']  : "monthly";
-		$instance['order'] = isset( $new_instance['order'] ) ? $new_instance['order'] : "desc";
-		$instance['limit'] = isset( $new_instance['limit'] ) ? $new_instance['limit'] : "";
+		$instance['type']  = sanitize_text_field( $new_instance['type'] );
+		$instance['order'] = sanitize_text_field( $new_instance['order'] );
+		$instance['limit'] = (int) $new_instance['limit'];
 
 		return (array) $instance;
 	}
