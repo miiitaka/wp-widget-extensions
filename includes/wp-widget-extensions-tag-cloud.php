@@ -46,7 +46,7 @@ class WP_Widget_Extensions_Tag_Cloud extends WP_Widget_Tag_Cloud {
 		$name = $this->get_field_name( 'orderby' );
 		$sort_array = array(
 			"name"  => esc_html__( "Name of the order",  $this->text_domain ),
-			"count" => esc_html__( "Posts of the order", $this->text_domain )
+			"count" => esc_html__( "Tag Count of the order", $this->text_domain )
 		);
 
 		echo '<p><label for="' . $id . '">' . esc_html__( 'Sort by', $this->text_domain ) . ':</label><br>';
@@ -83,18 +83,6 @@ class WP_Widget_Extensions_Tag_Cloud extends WP_Widget_Tag_Cloud {
 			}
 		}
 		echo '</select></p>';
-
-		/**
-		 * Number Element
-		 */
-		if ( !isset( $instance['number'] ) ) {
-			$instance['number'] = 45;
-		}
-		$id   = $this->get_field_id( 'number' );
-		$name = $this->get_field_name( 'number' );
-		echo '<p><label for="' . $id . '">' . esc_html__( 'Number of tag to show', $this->text_domain ) . ':&nbsp;</label>';
-		printf( '<input type="number" id="%s" name="%s" value="%s" class="small-text" min="1">', $id, $name, esc_attr( $instance['number'] ) );
-		echo '</p>';
 	}
 
 	/**
@@ -112,7 +100,6 @@ class WP_Widget_Extensions_Tag_Cloud extends WP_Widget_Tag_Cloud {
 
 		$instance['orderby'] = sanitize_text_field( $new_instance['orderby'] );
 		$instance['order']   = sanitize_text_field( $new_instance['order'] );
-		$instance['number']  = (int) $new_instance['number'];
 
 		return (array) $instance;
 	}
@@ -132,9 +119,6 @@ class WP_Widget_Extensions_Tag_Cloud extends WP_Widget_Tag_Cloud {
 		}
 		if ( isset( $this->instance['order'] ) ) {
 			$args['order'] = $this->instance['order'];
-		}
-		if ( isset( $this->instance['number'] ) ) {
-			$args['number'] = $this->instance['number'];
 		}
 
 		return (array) $args;
