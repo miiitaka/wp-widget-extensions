@@ -14,8 +14,13 @@ Plug-ins that extend the standard of the widget function.
 
 ### Categories Widget
 
-- Criteria change of the sort (Name order / Posts order)
+- Criteria change of the sort (Name order / Post Count order)
 - Ascending / descending order change
+
+### Tag Cloud Widget
+
+- Criteria change of the sort (Name order / Tag Count order)
+- Ascending / Descending order change
 
 ## Changelog
 

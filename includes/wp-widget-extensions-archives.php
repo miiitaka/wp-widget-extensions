@@ -66,11 +66,11 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 		 * Order Element
 		 */
 		if ( !isset( $instance['order'] ) ) {
-			$instance['order'] = "desc";
+			$instance['order'] = "DESC";
 		}
 		$order_array  = array(
-			"asc"  => esc_html__( "Ascending order",  $this->text_domain ),
-			"desc" => esc_html__( "Descending order", $this->text_domain )
+			"ASC"  => esc_html__( "Ascending order",  $this->text_domain ),
+			"DESC" => esc_html__( "Descending order", $this->text_domain )
 		);
 		$id   = $this->get_field_id( 'order' );
 		$name = $this->get_field_name( 'order' );

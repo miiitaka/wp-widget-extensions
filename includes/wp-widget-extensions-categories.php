@@ -45,8 +45,8 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 		$id   = $this->get_field_id( 'orderby' );
 		$name = $this->get_field_name( 'orderby' );
 		$sort_array = array(
-			"name"  => esc_html__( "Name of the order",  $this->text_domain ),
-			"count" => esc_html__( "Posts of the order", $this->text_domain )
+			"name"  => esc_html__( "Name order",  $this->text_domain ),
+			"count" => esc_html__( "Posts Count order", $this->text_domain )
 		);
 
 		echo '<p><label for="' . $id . '">' . esc_html__( 'Sort by', $this->text_domain ) . ':</label><br>';
@@ -64,13 +64,13 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 		 * Order Element
 		 */
 		if ( !isset( $instance['order'] ) ) {
-			$instance['order'] = "asc";
+			$instance['order'] = "ASC";
 		}
 		$id   = $this->get_field_id( 'order' );
 		$name = $this->get_field_name( 'order' );
 		$order_array  = array(
-			"asc"  => esc_html__( "Ascending order",  $this->text_domain ),
-			"desc" => esc_html__( "Descending order", $this->text_domain )
+			"ASC"  => esc_html__( "Ascending order",  $this->text_domain ),
+			"DESC" => esc_html__( "Descending order", $this->text_domain )
 		);
 
 		echo '<p><label for="' . $id . '">' . esc_html__( 'Order by', $this->text_domain ) . ':</label><br>';
