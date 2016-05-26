@@ -14,12 +14,17 @@ Plug-ins that extend the standard of the widget function.
 = Archives Widget =
 
 * Changing the units of the archive
-* Ascending / descending order change
+* Ascending / Descending order change
 
 = Categories Widget =
 
-* Criteria change of the sort (Name order / Posts order)
-* Ascending / descending order change
+* Criteria change of the sort (Name order / Post Count order)
+* Ascending / Descending order change
+
+= Tag Cloud Widget =
+
+* Criteria change of the sort (Name order / Tag Count order)
+* Ascending / Descending order change
 
 == Installation ==
 
