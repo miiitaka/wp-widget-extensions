@@ -1,0 +1,93 @@
+# Copyright (C) 2016 WordPress Default Widget Extension
+# This file is distributed under the same license as the WordPress Default Widget Extension package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress Default Widget Extension 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-widget-extentions\n"
+"POT-Creation-Date: 2016-05-31 09:55:05+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kazuya Takami <foundationmeister@outlook.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: includes/wp-widget-extensions-archives.php:46
+msgid "Daily"
+msgstr "日集計"
+
+#: includes/wp-widget-extensions-archives.php:47
+msgid "Weekly"
+msgstr "週集計"
+
+#: includes/wp-widget-extensions-archives.php:48
+msgid "Monthly"
+msgstr "月集計"
+
+#: includes/wp-widget-extensions-archives.php:49
+msgid "Yearly"
+msgstr "年収系"
+
+#: includes/wp-widget-extensions-archives.php:54
+msgid "Type"
+msgstr "タイプ"
+
+#: includes/wp-widget-extensions-archives.php:72
+#: includes/wp-widget-extensions-categories.php:72
+#: includes/wp-widget-extensions-tag-cloud.php:72
+msgid "Ascending order"
+msgstr "昇順"
+
+#: includes/wp-widget-extensions-archives.php:73
+#: includes/wp-widget-extensions-categories.php:73
+#: includes/wp-widget-extensions-tag-cloud.php:73
+msgid "Descending order"
+msgstr "降順"
+
+#: includes/wp-widget-extensions-archives.php:78
+#: includes/wp-widget-extensions-categories.php:76
+#: includes/wp-widget-extensions-tag-cloud.php:76
+msgid "Order by"
+msgstr "並び順"
+
+#: includes/wp-widget-extensions-archives.php:97
+msgid "Number of archive to show"
+msgstr "表示数"
+
+#: includes/wp-widget-extensions-categories.php:48
+#: includes/wp-widget-extensions-tag-cloud.php:48
+msgid "Name order"
+msgstr "名前順"
+
+#: includes/wp-widget-extensions-categories.php:49
+msgid "Posts Count order"
+msgstr "投稿数順"
+
+#: includes/wp-widget-extensions-categories.php:52
+#: includes/wp-widget-extensions-tag-cloud.php:52
+msgid "Sort by"
+msgstr "並び替え"
+
+#: includes/wp-widget-extensions-tag-cloud.php:49
+msgid "Tag Count order"
+msgstr "タグカウント順"
+
+#. Plugin Name of the plugin/theme
+msgid "WordPress Default Widget Extension"
+msgstr "WordPress Default Widget Extension"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/miiitaka/wp-widget-extensions"
+msgstr "https://github.com/miiitaka/wp-widget-extensions"
+
+#. Description of the plugin/theme
+msgid "Plug-ins that extend the standard of the widget function."
+msgstr "Plug-ins that extend the standard of the widget function."
+
+#. Author of the plugin/theme
+msgid "Kazuya Takami"
+msgstr "Kazuya Takami"
+
+#. Author URI of the plugin/theme
+msgid "http://programp.com/"
+msgstr "http://programp.com/"

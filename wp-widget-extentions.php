@@ -35,7 +35,17 @@ class WP_Widget_Extensions {
 	 * @since   1.0.0
 	 */
 	public function __construct () {
+		add_action( 'plugins_loaded', array( $this, 'plugins_loaded' ) );
 		add_action( 'widgets_init',   array( $this, 'widget_init' ) );
+	}
+
+	/**
+	 * i18n.
+	 *
+	 * @since   1.0.0
+	 */
+	public function plugins_loaded () {
+		load_plugin_textdomain( $this->text_domain, false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 
 	/**
