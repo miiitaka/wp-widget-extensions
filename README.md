@@ -24,6 +24,6 @@ Plug-ins that extend the standard of the widget function.
 
 ## Changelog
 
-### 1.0.0 (2016-xx-xx)
+### 1.0.0 (2016-05-31)
 
 - The first release.

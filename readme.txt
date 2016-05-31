@@ -1,6 +1,6 @@
 === WordPress Default Widget Extension ===
 Contributors: miiitaka
-Tags: widget, category, archive
+Tags: widget, category, archive, tag
 Requires at least: 4.5.2
 Tested up to: 4.5.2
 Stable tag: 1.0.0
@@ -34,7 +34,7 @@ Plug-ins that extend the standard of the widget function.
 
 == Changelog ==
 
-= 1.0.0 (2016-xx-xx) =
+= 1.0.0 (2016-05-31) =
 * The first release.
 
 == Contact ==
