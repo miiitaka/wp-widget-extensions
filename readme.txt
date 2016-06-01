@@ -15,6 +15,7 @@ Plug-ins that extend the standard of the widget function.
 
 * Changing the units of the archive
 * Ascending / Descending order change
+* Number of archive to show
 
 = Categories Widget =
 
