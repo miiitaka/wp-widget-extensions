@@ -25,6 +25,10 @@ Plug-ins that extend the standard of the widget function.
 
 ## Changelog
 
+### 1.0.1 (2016-06-06)
+
+- Added : Plug-in image.
+
 ### 1.0.0 (2016-05-31)
 
 - The first release.
