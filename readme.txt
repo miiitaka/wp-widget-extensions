@@ -3,7 +3,7 @@ Contributors: miiitaka
 Tags: widget, category, archive, tag
 Requires at least: 4.5.2
 Tested up to: 4.5.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 
 Plug-ins that extend the standard of the widget function.
 
@@ -15,6 +15,7 @@ Plug-ins that extend the standard of the widget function.
 
 * Changing the units of the archive
 * Ascending / Descending order change
+* Number of archive to show
 
 = Categories Widget =
 
@@ -33,6 +34,9 @@ Plug-ins that extend the standard of the widget function.
 * The plug-in is activated.
 
 == Changelog ==
+
+= 1.0.1 (2016-06-06) =
+* Added : Plug-in image.
 
 = 1.0.0 (2016-05-31) =
 * The first release.

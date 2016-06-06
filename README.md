@@ -16,6 +16,7 @@ Plug-ins that extend the standard of the widget function.
 
 - Criteria change of the sort (Name order / Post Count order)
 - Ascending / descending order change
+- Number of archive to show
 
 ### Tag Cloud Widget
 
@@ -23,6 +24,10 @@ Plug-ins that extend the standard of the widget function.
 - Ascending / Descending order change
 
 ## Changelog
+
+### 1.0.1 (2016-06-06)
+
+- Added : Plug-in image.
 
 ### 1.0.0 (2016-05-31)
 
