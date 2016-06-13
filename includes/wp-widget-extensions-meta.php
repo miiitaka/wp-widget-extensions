@@ -15,15 +15,6 @@ register_widget( 'WP_Widget_Extensions_Meta' );
 class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 
 	/**
-	 * Variable definition.
-	 *
-	 * @version 1.1.0
-	 * @since   1.1.0
-	 */
-	private $text_domain = 'wp-widget-extensions';
-	private $instance    = array();
-
-	/**
 	 * Widget Form Display.
 	 *
 	 * @version 1.1.0
@@ -45,7 +36,7 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 		 * Site Admin
 		 */
 		$field_name = 'site_admin';
-		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = ''; }
+		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = 0; }
 		$form->checkbox( $this->get_field_id( $field_name ), $this->get_field_name( $field_name ), $instance[ $field_name ], __( 'Site Admin' ) );
 		echo '<br />';
 
@@ -53,15 +44,15 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 		 * Site Login
 		 */
 		$field_name = 'site_login';
-		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = ''; }
-		$form->checkbox( $this->get_field_id( $field_name ), $this->get_field_name( $field_name ), $instance[ $field_name ], __('Log in') . ' / ' . __('Log out') );
+		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = 0; }
+		$form->checkbox( $this->get_field_id( $field_name ), $this->get_field_name( $field_name ), $instance[ $field_name ], __( 'Log in' ) . ' / ' . __( 'Log out' ) );
 		echo '<br />';
 
 		/**
 		 * Entries RSS
 		 */
 		$field_name = 'entries_rss';
-		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = ''; }
+		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = 0; }
 		$form->checkbox( $this->get_field_id( $field_name ), $this->get_field_name( $field_name ), $instance[ $field_name ], __( 'Entries <abbr title="Really Simple Syndication">RSS</abbr>' ) );
 		echo '<br />';
 
@@ -69,7 +60,7 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 		 * Comments RSS
 		 */
 		$field_name = 'comments_rss';
-		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = ''; }
+		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = 0; }
 		$form->checkbox( $this->get_field_id( $field_name ), $this->get_field_name( $field_name ), $instance[ $field_name ], __( 'Comments <abbr title="Really Simple Syndication">RSS</abbr>' ) );
 		echo '<br />';
 
@@ -77,7 +68,7 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 		 * WordPress.org
 		 */
 		$field_name = 'wordpress_org';
-		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = ''; }
+		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = 0; }
 		$form->checkbox( $this->get_field_id( $field_name ), $this->get_field_name( $field_name ), $instance[ $field_name ], _x( 'WordPress.org', 'meta widget link text' ) );
 
 		echo '</p>';
@@ -95,6 +86,13 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 	 */
 	public function update ( $new_instance, $old_instance ) {
 		$instance = parent::update( $new_instance, $old_instance );
+
+		$instance['site_admin']    = $new_instance['site_admin']    ? 1 : 0;
+		$instance['site_login']    = $new_instance['site_login']    ? 1 : 0;
+		$instance['entries_rss']   = $new_instance['entries_rss']   ? 1 : 0;
+		$instance['comments_rss']  = $new_instance['comments_rss']  ? 1 : 0;
+		$instance['wordpress_org'] = $new_instance['wordpress_org'] ? 1 : 0;
+
 		return (array) $instance;
 	}
 
@@ -109,34 +107,51 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 	 */
 	public function widget ( $args, $instance ) {
 		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
-		$title = apply_filters( 'widget_title', empty($instance['title']) ? __( 'Meta' ) : $instance['title'], $instance, $this->id_base );
+		$title = apply_filters( 'widget_title', empty( $instance['title']) ? __( 'Meta' ) : $instance['title'], $instance, $this->id_base );
 
 		echo $args['before_widget'];
 		if ( $title ) {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
 
+		$site_admin_flag    = ! empty( $instance['site_admin'] )    ? '1' : '0';
+		$site_login_flag    = ! empty( $instance['site_login'] )    ? '1' : '0';
+		$entries_rss_flag   = ! empty( $instance['entries_rss'] )   ? '1' : '0';
+		$comments_rss_flag  = ! empty( $instance['comments_rss'] )  ? '1' : '0';
+		$wordpress_org_flag = ! empty( $instance['wordpress_org'] ) ? '1' : '0';
+
 		$html  = '';
-		$html .= '<ul>';
+		echo '<ul>';
 
-		wp_register();
+		if ( $site_admin_flag ) {
+			wp_register();
+		}
 
-		$html .= '<li>' . wp_loginout( '', false ) . '</li>';
+		if ( $site_login_flag ) {
+			$html .= '<li>' . wp_loginout( '', false ) . '</li>';
+		}
 
-		$html .= '<li><a href="' . esc_url( get_bloginfo( 'rss2_url' ) ) . '">'. __( 'Entries <abbr title="Really Simple Syndication">RSS</abbr>' ) . '</a></li>';
+		if ( $entries_rss_flag ) {
+			$html .= '<li><a href="' . esc_url( get_bloginfo( 'rss2_url' ) ) . '">' . __( 'Entries <abbr title="Really Simple Syndication">RSS</abbr>' ) . '</a></li>';
+		}
 
-		$html .= '<li><a href="' . esc_url( get_bloginfo( 'comments_rss2_url' ) ) . '">'. __( 'Comments <abbr title="Really Simple Syndication">RSS</abbr>' ) . '</a></li>';
+		if ( $comments_rss_flag ) {
+			$html .= '<li><a href="' . esc_url( get_bloginfo( 'comments_rss2_url' ) ) . '">' . __( 'Comments <abbr title="Really Simple Syndication">RSS</abbr>' ) . '</a></li>';
+		}
 
 		echo $html;
 
-		echo apply_filters( 'widget_meta_poweredby', sprintf( '<li><a href="%s" title="%s">%s</a></li>',
-			esc_url( __( 'https://wordpress.org/' ) ),
-			esc_attr__( 'Powered by WordPress, state-of-the-art semantic personal publishing platform.' ),
-			_x( 'WordPress.org', 'meta widget link text' )
-		) );
+		if ( $wordpress_org_flag ) {
+			echo apply_filters(
+				'widget_meta_poweredby',
+				sprintf( '<li><a href="%s" title="%s">%s</a></li>',
+				esc_url( __( 'https://wordpress.org/' ) ),
+				esc_attr__( 'Powered by WordPress, state-of-the-art semantic personal publishing platform.' ),
+				_x( 'WordPress.org', 'meta widget link text' )
+			));
+		}
 
 		wp_meta();
-
 		echo '</ul>';
 
 		echo $args['after_widget'];
