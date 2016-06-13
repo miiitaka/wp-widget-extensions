@@ -2,7 +2,7 @@
 if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
-new Posted_Display_Uninstall();
+new WP_Widget_Extensions_Uninstall();
 
 /**
  * Plugin Uninstall
@@ -11,7 +11,7 @@ new Posted_Display_Uninstall();
  * @version 1.1.0
  * @since   1.1.0
  */
-class Posted_Display_Uninstall {
+class WP_Widget_Extensions_Uninstall {
 
 	/**
 	 * Constructor Define.
