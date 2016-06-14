@@ -33,70 +33,54 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 	 */
 	public function form ( $instance ) {
 		parent::form( $instance );
-		
+
+		require_once( 'wp-widget-extensions-form-build.php' );
+		$form = new WP_Widget_Extensions_Form_Build();
+
 		echo '<hr>';
 
 		/**
 		 * Type Element
 		 */
-		if ( !isset( $instance['type'] ) ) {
-			$instance['type'] = "monthly";
-		}
+		$field_name = 'type';
+		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = "monthly"; }
 		$type_array = array(
-			"daily"   => esc_html__( "Daily",   $this->text_domain ),
-			"weekly"  => esc_html__( "Weekly",  $this->text_domain ),
-			"monthly" => esc_html__( "Monthly", $this->text_domain ),
-			"yearly"  => esc_html__( "Yearly",  $this->text_domain )
+			"daily"   => __( "Daily",   $this->text_domain ),
+			"weekly"  => __( "Weekly",  $this->text_domain ),
+			"monthly" => __( "Monthly", $this->text_domain ),
+			"yearly"  => __( "Yearly",  $this->text_domain )
 		);
-		$id   = $this->get_field_id( 'type' );
-		$name = $this->get_field_name( 'type' );
-
-		echo '<p><label for="' . $id . '">' . esc_html__( 'Type', $this->text_domain ) . ':</label><br>';
-		printf( '<select id="%s" name="%s" class="widefat">', $id, $name );
-		foreach ( $type_array as $key => $row ) {
-			if ( $key == $instance['type'] ) {
-				printf( '<option value="%s" selected="selected">%s</option>', $key, esc_html( $row ) );
-			} else {
-				printf( '<option value="%s">%s</option>', $key, esc_html( $row ) );
-			}
-		}
-		echo '</select></p>';
+		$form->select(
+			$this->get_field_id( $field_name ),
+			$this->get_field_name( $field_name ),
+			$instance[ $field_name ],
+			__( 'Type', $this->text_domain ),
+			$type_array
+		);
 
 		/**
 		 * Order Element
 		 */
-		if ( !isset( $instance['order'] ) ) {
-			$instance['order'] = "DESC";
-		}
+		$field_name = 'order';
+		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = "DESC"; }
 		$order_array  = array(
-			"ASC"  => esc_html__( "Ascending order",  $this->text_domain ),
-			"DESC" => esc_html__( "Descending order", $this->text_domain )
+			"ASC"  => __( "Ascending order",  $this->text_domain ),
+			"DESC" => __( "Descending order", $this->text_domain )
 		);
-		$id   = $this->get_field_id( 'order' );
-		$name = $this->get_field_name( 'order' );
-
-		echo '<p><label for="' . $id . '">' . esc_html__( 'Order by', $this->text_domain ) . ':</label><br>';
-		printf( '<select id="%s" name="%s" class="widefat">', $id, $name );
-		foreach ( $order_array as $key => $row ) {
-			if ( $key == $instance['order'] ) {
-				printf( '<option value="%s" selected="selected">%s</option>', $key, esc_html( $row ) );
-			} else {
-				printf( '<option value="%s">%s</option>', $key, esc_html( $row ) );
-			}
-		}
-		echo '</select></p>';
+		$form->select(
+			$this->get_field_id( $field_name ),
+			$this->get_field_name( $field_name ),
+			$instance[ $field_name ],
+			__( 'Order by', $this->text_domain ),
+			$order_array
+		);
 
 		/**
 		 * Limit Element
 		 */
-		if ( !isset( $instance['limit'] ) ) {
-			$instance['limit'] = 0;
-		}
-		$id   = $this->get_field_id( 'limit' );
-		$name = $this->get_field_name( 'limit' );
-		echo '<p><label for="' . $id . '">' . esc_html__( 'Number of archive to show', $this->text_domain ) . ':&nbsp;</label>';
-		printf( '<input type="number" id="%s" name="%s" value="%s" class="small-text">', $id, $name, esc_attr( $instance['limit'] ) );
-		echo '</p>';
+		$field_name = 'limit';
+		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = 0; }
+		$form->number( $this->get_field_id( $field_name ), $this->get_field_name( $field_name ), $instance[ $field_name ], __( 'Number of archive to show', $this->text_domain ) );
 	}
 
 	/**
