@@ -35,13 +35,41 @@ class WP_Widget_Extensions {
 	 * @since   1.0.0
 	 */
 	public function __construct () {
+		register_activation_hook( __FILE__, array( $this, 'widget_data_init' ) );
 		add_action( 'plugins_loaded', array( $this, 'plugins_loaded' ) );
 		add_action( 'widgets_init',   array( $this, 'widget_init' ) );
 	}
 
 	/**
+	 * Widget Data init.
+	 *
+	 * @version 1.1.0
+	 * @since   1.1.0
+	 */
+	public function widget_data_init(){
+		$field_name = "widget_meta";
+		if ( get_option( $field_name ) ) {
+			$widget_array = get_option( $field_name );
+			$update_array = array();
+
+			foreach ( $widget_array as $key => $value ) {
+				if ( is_array( $value ) ) {
+					$value["site_admin"]    = 1;
+					$value["site_login"]    = 1;
+					$value["entries_rss"]   = 1;
+					$value["comments_rss"]  = 1;
+					$value["wordpress_org"] = 1;
+				}
+				$update_array[$key] = $value;
+			}
+			update_option( $field_name, $update_array );
+		}
+	}
+
+	/**
 	 * i18n.
 	 *
+	 * @version 1.0.0
 	 * @since   1.0.0
 	 */
 	public function plugins_loaded () {

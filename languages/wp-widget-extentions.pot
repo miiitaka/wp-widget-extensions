@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WordPress Default Widget Extension package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WordPress Default Widget Extension 1.0.0\n"
+"Project-Id-Version: WordPress Default Widget Extension 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-widget-"
 "extentions\n"
-"POT-Creation-Date: 2016-05-31 09:55:05+00:00\n"
+"POT-Creation-Date: 2016-06-14 05:05:13+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,46 +13,46 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: includes/wp-widget-extensions-archives.php:46
+#: includes/wp-widget-extensions-archives.php:48
 msgid "Daily"
 msgstr ""
 
-#: includes/wp-widget-extensions-archives.php:47
+#: includes/wp-widget-extensions-archives.php:49
 msgid "Weekly"
 msgstr ""
 
-#: includes/wp-widget-extensions-archives.php:48
+#: includes/wp-widget-extensions-archives.php:50
 msgid "Monthly"
 msgstr ""
 
-#: includes/wp-widget-extensions-archives.php:49
+#: includes/wp-widget-extensions-archives.php:51
 msgid "Yearly"
 msgstr ""
 
-#: includes/wp-widget-extensions-archives.php:54
-msgid "Type"
+#: includes/wp-widget-extensions-archives.php:57
+msgid "Type:"
 msgstr ""
 
-#: includes/wp-widget-extensions-archives.php:72
-#: includes/wp-widget-extensions-categories.php:72
-#: includes/wp-widget-extensions-tag-cloud.php:72
+#: includes/wp-widget-extensions-archives.php:67
+#: includes/wp-widget-extensions-categories.php:65
+#: includes/wp-widget-extensions-tag-cloud.php:65
 msgid "Ascending order"
 msgstr ""
 
-#: includes/wp-widget-extensions-archives.php:73
-#: includes/wp-widget-extensions-categories.php:73
-#: includes/wp-widget-extensions-tag-cloud.php:73
+#: includes/wp-widget-extensions-archives.php:68
+#: includes/wp-widget-extensions-categories.php:66
+#: includes/wp-widget-extensions-tag-cloud.php:66
 msgid "Descending order"
 msgstr ""
 
-#: includes/wp-widget-extensions-archives.php:78
-#: includes/wp-widget-extensions-categories.php:76
-#: includes/wp-widget-extensions-tag-cloud.php:76
-msgid "Order by"
+#: includes/wp-widget-extensions-archives.php:74
+#: includes/wp-widget-extensions-categories.php:72
+#: includes/wp-widget-extensions-tag-cloud.php:72
+msgid "Order by:"
 msgstr ""
 
-#: includes/wp-widget-extensions-archives.php:97
-msgid "Number of archive to show"
+#: includes/wp-widget-extensions-archives.php:83
+msgid "Number of archive to show:"
 msgstr ""
 
 #: includes/wp-widget-extensions-categories.php:48
@@ -61,16 +61,54 @@ msgid "Name order"
 msgstr ""
 
 #: includes/wp-widget-extensions-categories.php:49
+#: includes/wp-widget-extensions-tag-cloud.php:49
 msgid "Posts Count order"
 msgstr ""
 
-#: includes/wp-widget-extensions-categories.php:52
-#: includes/wp-widget-extensions-tag-cloud.php:52
-msgid "Sort by"
+#: includes/wp-widget-extensions-categories.php:55
+#: includes/wp-widget-extensions-tag-cloud.php:55
+msgid "Sort by:"
 msgstr ""
 
-#: includes/wp-widget-extensions-tag-cloud.php:49
-msgid "Tag Count order"
+#: includes/wp-widget-extensions-meta.php:40
+msgid "Site Admin"
+msgstr ""
+
+#: includes/wp-widget-extensions-meta.php:48
+msgid "Log in"
+msgstr ""
+
+#: includes/wp-widget-extensions-meta.php:48
+msgid "Log out"
+msgstr ""
+
+#: includes/wp-widget-extensions-meta.php:56
+#: includes/wp-widget-extensions-meta.php:135
+msgid "Entries <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr ""
+
+#: includes/wp-widget-extensions-meta.php:64
+#: includes/wp-widget-extensions-meta.php:139
+msgid "Comments <abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr ""
+
+#: includes/wp-widget-extensions-meta.php:72
+#: includes/wp-widget-extensions-meta.php:150
+msgctxt "meta widget link text"
+msgid "WordPress.org"
+msgstr ""
+
+#: includes/wp-widget-extensions-meta.php:110
+msgid "Meta"
+msgstr ""
+
+#: includes/wp-widget-extensions-meta.php:148
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: includes/wp-widget-extensions-meta.php:149
+msgid ""
+"Powered by WordPress, state-of-the-art semantic personal publishing platform."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
