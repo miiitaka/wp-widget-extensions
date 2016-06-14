@@ -20,7 +20,57 @@ class WP_Widget_Extensions_Uninstall {
 	 * @since   1.1.0
 	 */
 	public function __construct () {
+		$this->delete_widget_archives( "widget_archives" );
+		$this->delete_widget_categories( "widget_categories" );
 		$this->delete_widget_meta( "widget_meta" );
+		$this->delete_widget_tag_cloud( "widget_tag_cloud" );
+	}
+
+	/**
+	 * Delete Widget Archives Option.
+	 *
+	 * @version 1.1.0
+	 * @since   1.1.0
+	 * @param   string $option
+	 */
+	private function delete_widget_archives ( $option ) {
+		$widget_array = get_option( $option );
+		$update_array = array();
+
+		foreach ( $widget_array as $key => $value ) {
+			if ( is_array( $value ) ) {
+				unset(
+					$value["type"],
+					$value["order"],
+					$value["limit"]
+				);
+			}
+			$update_array[$key] = $value;
+		}
+		update_option( $option, $update_array );
+	}
+
+	/**
+	 * Delete Widget Categories Option.
+	 *
+	 * @version 1.1.0
+	 * @since   1.1.0
+	 * @param   string $option
+	 */
+	private function delete_widget_categories ( $option ) {
+		$widget_array = get_option( $option );
+		$update_array = array();
+
+		foreach ( $widget_array as $key => $value ) {
+			if ( is_array( $value ) ) {
+				unset(
+					$value["order"],
+					$value["orderby"]
+				);
+			}
+			$update_array[$key] = $value;
+		}
+		update_option( $option, $update_array );
 	}
 
 	/**
@@ -42,6 +92,29 @@ class WP_Widget_Extensions_Uninstall {
 					$value["entries_rss"],
 					$value["comments_rss"],
 					$value["wordpress_org"]
+				);
+			}
+			$update_array[$key] = $value;
+		}
+		update_option( $option, $update_array );
+	}
+
+	/**
+	 * Delete Widget Tag Cloud Option.
+	 *
+	 * @version 1.1.0
+	 * @since   1.1.0
+	 * @param   string $option
+	 */
+	private function delete_widget_tag_cloud ( $option ) {
+		$widget_array = get_option( $option );
+		$update_array = array();
+
+		foreach ( $widget_array as $key => $value ) {
+			if ( is_array( $value ) ) {
+				unset(
+					$value["order"],
+					$value["orderby"]
 				);
 			}
 			$update_array[$key] = $value;
