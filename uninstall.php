@@ -34,20 +34,22 @@ class WP_Widget_Extensions_Uninstall {
 	 * @param   string $option
 	 */
 	private function delete_widget_archives ( $option ) {
-		$widget_array = get_option( $option );
-		$update_array = array();
+		if ( get_option( $option ) ) {
+			$widget_array = get_option( $option );
+			$update_array = array();
 
-		foreach ( $widget_array as $key => $value ) {
-			if ( is_array( $value ) ) {
-				unset(
-					$value["type"],
-					$value["order"],
-					$value["limit"]
-				);
+			foreach ( $widget_array as $key => $value ) {
+				if ( is_array( $value ) ) {
+					unset(
+						$value["type"],
+						$value["order"],
+						$value["limit"]
+					);
+				}
+				$update_array[$key] = $value;
 			}
-			$update_array[$key] = $value;
+			update_option( $option, $update_array );
 		}
-		update_option( $option, $update_array );
 	}
 
 	/**
@@ -58,19 +60,21 @@ class WP_Widget_Extensions_Uninstall {
 	 * @param   string $option
 	 */
 	private function delete_widget_categories ( $option ) {
-		$widget_array = get_option( $option );
-		$update_array = array();
+		if ( get_option( $option ) ) {
+			$widget_array = get_option( $option );
+			$update_array = array();
 
-		foreach ( $widget_array as $key => $value ) {
-			if ( is_array( $value ) ) {
-				unset(
-					$value["order"],
-					$value["orderby"]
-				);
+			foreach ( $widget_array as $key => $value ) {
+				if ( is_array( $value ) ) {
+					unset(
+						$value["order"],
+						$value["orderby"]
+					);
+				}
+				$update_array[$key] = $value;
 			}
-			$update_array[$key] = $value;
+			update_option( $option, $update_array );
 		}
-		update_option( $option, $update_array );
 	}
 
 	/**
@@ -81,22 +85,24 @@ class WP_Widget_Extensions_Uninstall {
 	 * @param   string $option
 	 */
 	private function delete_widget_meta ( $option ) {
-		$widget_array = get_option( $option );
-		$update_array = array();
+		if ( get_option( $option ) ) {
+			$widget_array = get_option( $option );
+			$update_array = array();
 
-		foreach ( $widget_array as $key => $value ) {
-			if ( is_array( $value ) ) {
-				unset(
-					$value["site_admin"],
-					$value["site_login"],
-					$value["entries_rss"],
-					$value["comments_rss"],
-					$value["wordpress_org"]
-				);
+			foreach ( $widget_array as $key => $value ) {
+				if ( is_array( $value ) ) {
+					unset(
+						$value["site_admin"],
+						$value["site_login"],
+						$value["entries_rss"],
+						$value["comments_rss"],
+						$value["wordpress_org"]
+					);
+				}
+				$update_array[$key] = $value;
 			}
-			$update_array[$key] = $value;
+			update_option( $option, $update_array );
 		}
-		update_option( $option, $update_array );
 	}
 
 	/**
@@ -107,18 +113,20 @@ class WP_Widget_Extensions_Uninstall {
 	 * @param   string $option
 	 */
 	private function delete_widget_tag_cloud ( $option ) {
-		$widget_array = get_option( $option );
-		$update_array = array();
+		if ( get_option( $option ) ) {
+			$widget_array = get_option( $option );
+			$update_array = array();
 
-		foreach ( $widget_array as $key => $value ) {
-			if ( is_array( $value ) ) {
-				unset(
-					$value["order"],
-					$value["orderby"]
-				);
+			foreach ( $widget_array as $key => $value ) {
+				if ( is_array( $value ) ) {
+					unset(
+						$value["order"],
+						$value["orderby"]
+					);
+				}
+				$update_array[$key] = $value;
 			}
-			$update_array[$key] = $value;
+			update_option( $option, $update_array );
 		}
-		update_option( $option, $update_array );
 	}
 }
