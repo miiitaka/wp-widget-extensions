@@ -52,7 +52,7 @@ class WP_Widget_Extensions_Tag_Cloud extends WP_Widget_Tag_Cloud {
 			$this->get_field_id( $field_name ),
 			$this->get_field_name( $field_name ),
 			$instance[ $field_name ],
-			__( 'Sort by', $this->text_domain ),
+			__( 'Sort by:', $this->text_domain ),
 			$sort_array
 		);
 
@@ -69,7 +69,7 @@ class WP_Widget_Extensions_Tag_Cloud extends WP_Widget_Tag_Cloud {
 			$this->get_field_id( $field_name ),
 			$this->get_field_name( $field_name ),
 			$instance[ $field_name ],
-			__( 'Order by', $this->text_domain ),
+			__( 'Order by:', $this->text_domain ),
 			$order_array
 		);
 	}

@@ -54,7 +54,7 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 			$this->get_field_id( $field_name ),
 			$this->get_field_name( $field_name ),
 			$instance[ $field_name ],
-			__( 'Type', $this->text_domain ),
+			__( 'Type:', $this->text_domain ),
 			$type_array
 		);
 
@@ -71,7 +71,7 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 			$this->get_field_id( $field_name ),
 			$this->get_field_name( $field_name ),
 			$instance[ $field_name ],
-			__( 'Order by', $this->text_domain ),
+			__( 'Order by:', $this->text_domain ),
 			$order_array
 		);
 
@@ -80,7 +80,7 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 		 */
 		$field_name = 'limit';
 		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = 0; }
-		$form->number( $this->get_field_id( $field_name ), $this->get_field_name( $field_name ), $instance[ $field_name ], __( 'Number of archive to show', $this->text_domain ) );
+		$form->number( $this->get_field_id( $field_name ), $this->get_field_name( $field_name ), $instance[ $field_name ], __( 'Number of archive to show:', $this->text_domain ) );
 	}
 
 	/**
