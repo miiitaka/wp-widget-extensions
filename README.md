@@ -18,12 +18,20 @@ Plug-ins that extend the standard of the widget function.
 - Ascending / descending order change
 - Number of archive to show
 
+### Meta Widget
+
+- Enabled / Disabled select
+
 ### Tag Cloud Widget
 
 - Criteria change of the sort (Name order / Tag Count order)
 - Ascending / Descending order change
 
 ## Changelog
+
+### 1.1.0 (2016-06-14)
+
+- Added : Widget meta customized.
 
 ### 1.0.1 (2016-06-06)
 

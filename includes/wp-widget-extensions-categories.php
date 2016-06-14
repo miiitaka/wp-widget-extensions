@@ -33,56 +33,45 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 	 */
 	public function form ( $instance ) {
 		parent::form( $instance );
-		
+
+		require_once( 'wp-widget-extensions-form-build.php' );
+		$form = new WP_Widget_Extensions_Form_Build();
+
 		echo '<hr>';
 
 		/**
 		 * OrderBy Element
 		 */
-		if ( !isset( $instance['orderby'] ) ) {
-			$instance['orderby'] = "name";
-		}
-		$id   = $this->get_field_id( 'orderby' );
-		$name = $this->get_field_name( 'orderby' );
-		$sort_array = array(
-			"name"  => esc_html__( "Name order",  $this->text_domain ),
-			"count" => esc_html__( "Posts Count order", $this->text_domain )
+		$field_name = 'orderby';
+		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = "name"; }
+		$sort_array  = array(
+			"name"  => __( "Name order",  $this->text_domain ),
+			"count" => __( "Posts Count order", $this->text_domain )
 		);
-
-		echo '<p><label for="' . $id . '">' . esc_html__( 'Sort by', $this->text_domain ) . ':</label><br>';
-		printf( '<select id="%s" name="%s" class="widefat">', $id, $name );
-		foreach ( $sort_array as $key => $row ) {
-			if ( $key == $instance['orderby'] ) {
-				printf( '<option value="%s" selected="selected">%s</option>', $key, esc_html( $row ) );
-			} else {
-				printf( '<option value="%s">%s</option>', $key, esc_html( $row ) );
-			}
-		}
-		echo '</select></p>';
+		$form->select(
+			$this->get_field_id( $field_name ),
+			$this->get_field_name( $field_name ),
+			$instance[ $field_name ],
+			__( 'Sort by:', $this->text_domain ),
+			$sort_array
+		);
 
 		/**
 		 * Order Element
 		 */
-		if ( !isset( $instance['order'] ) ) {
-			$instance['order'] = "ASC";
-		}
-		$id   = $this->get_field_id( 'order' );
-		$name = $this->get_field_name( 'order' );
+		$field_name = 'order';
+		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = "ASC"; }
 		$order_array  = array(
-			"ASC"  => esc_html__( "Ascending order",  $this->text_domain ),
-			"DESC" => esc_html__( "Descending order", $this->text_domain )
+			"ASC"  => __( "Ascending order",  $this->text_domain ),
+			"DESC" => __( "Descending order", $this->text_domain )
 		);
-
-		echo '<p><label for="' . $id . '">' . esc_html__( 'Order by', $this->text_domain ) . ':</label><br>';
-		printf( '<select id="%s" name="%s" class="widefat">', $id, $name );
-		foreach ( $order_array as $key => $row ) {
-			if ( $key == $instance['order'] ) {
-				printf( '<option value="%s" selected="selected">%s</option>', $key, esc_html( $row ) );
-			} else {
-				printf( '<option value="%s">%s</option>', $key, esc_html( $row ) );
-			}
-		}
-		echo '</select></p>';
+		$form->select(
+			$this->get_field_id( $field_name ),
+			$this->get_field_name( $field_name ),
+			$instance[ $field_name ],
+			__( 'Order by:', $this->text_domain ),
+			$order_array
+		);
 	}
 
 	/**

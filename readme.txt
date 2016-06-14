@@ -1,9 +1,9 @@
 === WordPress Default Widget Extension ===
 Contributors: miiitaka
-Tags: widget, category, archive, tag
+Tags: widget, category, archive, tag, meta
 Requires at least: 4.5.2
 Tested up to: 4.5.2
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 
 Plug-ins that extend the standard of the widget function.
 
@@ -22,6 +22,10 @@ Plug-ins that extend the standard of the widget function.
 * Criteria change of the sort (Name order / Post Count order)
 * Ascending / Descending order change
 
+= Meta Widget =
+
+* Enabled / Disabled select
+
 = Tag Cloud Widget =
 
 * Criteria change of the sort (Name order / Tag Count order)
@@ -34,6 +38,9 @@ Plug-ins that extend the standard of the widget function.
 * The plug-in is activated.
 
 == Changelog ==
+
+= 1.1.0 (2016-06-14) =
+* Added : Widget meta customized.
 
 = 1.0.1 (2016-06-06) =
 * Added : Plug-in image.
