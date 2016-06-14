@@ -29,7 +29,7 @@ Plug-ins that extend the standard of the widget function.
 
 ## Changelog
 
-### 1.1.0 (2016-06-xx)
+### 1.1.0 (2016-06-14)
 
 - Added : Widget meta customized.
 
