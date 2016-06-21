@@ -3,7 +3,7 @@
  * Admin Widget Register ( Meta Widget )
  *
  * @author  Kazuya Takami
- * @version 1.1.0
+ * @version 1.2.0
  * @since   1.1.0
  * @see     /wp-includes/widgets/class-wp-widget-meta.php
  * @see     wp-widget-extensions-form-build.php
@@ -17,7 +17,7 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 	/**
 	 * Widget Form Display.
 	 *
-	 * @version 1.1.0
+	 * @version 1.2.0
 	 * @since   1.1.0
 	 * @access  public
 	 * @param   array $instance
@@ -57,6 +57,21 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 		echo '<br />';
 
 		/**
+		 * Custom Posts RSS
+		 */
+		$args = array(
+			'public'   => true,
+			'_builtin' => false
+		);
+		$post_types = get_post_types( $args, 'objects' );
+		foreach ( $post_types as $post_type ) {
+			$field_name = esc_html( $post_type->name );
+			if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = 0; }
+			$form->checkbox( $this->get_field_id( $field_name ), $this->get_field_name( $field_name ), $instance[ $field_name ], esc_html( $post_type->label ) . ' <abbr title="Really Simple Syndication">RSS</abbr>' );
+			echo '<br />';
+		}
+
+		/**
 		 * Comments RSS
 		 */
 		$field_name = 'comments_rss';
@@ -77,7 +92,7 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 	/**
 	 * Widget Form Update.
 	 *
-	 * @version 1.1.0
+	 * @version 1.2.0
 	 * @since   1.1.0
 	 * @access  public
 	 * @param   array $new_instance
@@ -93,13 +108,24 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 		$instance['comments_rss']  = $new_instance['comments_rss']  ? 1 : 0;
 		$instance['wordpress_org'] = $new_instance['wordpress_org'] ? 1 : 0;
 
+		/* Custom Posts */
+		$args = array(
+			'public'   => true,
+			'_builtin' => false
+		);
+		$post_types = get_post_types( $args, 'objects' );
+		foreach ( $post_types as $post_type ) {
+			$field_name = esc_html( $post_type->name );
+			$instance[ $field_name ] = $new_instance[ $field_name ] ? 1 : 0;
+		}
+
 		return (array) $instance;
 	}
 
 	/**
 	 * Widget Display.
 	 *
-	 * @version 1.1.0
+	 * @version 1.2.0
 	 * @since   1.1.0
 	 * @access  public
 	 * @param   array $args
@@ -133,6 +159,24 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 
 		if ( $entries_rss_flag ) {
 			$html .= '<li><a href="' . esc_url( get_bloginfo( 'rss2_url' ) ) . '">' . __( 'Entries <abbr title="Really Simple Syndication">RSS</abbr>' ) . '</a></li>';
+		}
+
+		/* Custom Posts */
+		$post_args = array(
+			'public'   => true,
+			'_builtin' => false
+		);
+		$post_types = get_post_types( $post_args, 'objects' );
+		foreach ( $post_types as $post_type ) {
+			$field_name = esc_html( $post_type->name );
+			if ( isset( $instance[ $field_name ] ) ) {
+				if ( $instance[ $field_name ] ) {
+					$rss_url = get_post_type_archive_feed_link( $field_name );
+					if ( $rss_url ) {
+						$html .= '<li><a href="' . esc_url( $rss_url ) . '">' . esc_html( $post_type->label ) . ' <abbr title="Really Simple Syndication">RSS</abbr></a></li>';
+					}
+				}
+			}
 		}
 
 		if ( $comments_rss_flag ) {
