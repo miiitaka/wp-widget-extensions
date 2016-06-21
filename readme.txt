@@ -3,7 +3,7 @@ Contributors: miiitaka
 Tags: widget, category, archive, tag, meta
 Requires at least: 4.5.2
 Tested up to: 4.5.2
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 
 Plug-ins that extend the standard of the widget function.
 
@@ -25,6 +25,7 @@ Plug-ins that extend the standard of the widget function.
 = Meta Widget =
 
 * Enabled / Disabled select
+* View Custom Post RSS
 
 = Tag Cloud Widget =
 
@@ -38,6 +39,9 @@ Plug-ins that extend the standard of the widget function.
 * The plug-in is activated.
 
 == Changelog ==
+
+= 1.2.0 (2016-06-21) =
+* Updated : Widget meta customized(custom posts RSS).
 
 = 1.1.0 (2016-06-14) =
 * Added : Widget meta customized.

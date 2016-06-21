@@ -19,7 +19,7 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 	 * @version 1.0.0
 	 * @since   1.0.0
 	 */
-	private $text_domain = 'wp-widget-extensions';
+	private $text_domain = 'wp-widget-extentions';
 	private $instance    = array();
 
 	/**

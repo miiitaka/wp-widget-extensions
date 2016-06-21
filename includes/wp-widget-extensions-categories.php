@@ -19,7 +19,7 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 	 * @version 1.0.0
 	 * @since   1.0.0
 	 */
-	private $text_domain = 'wp-widget-extensions';
+	private $text_domain = 'wp-widget-extentions';
 	private $instance    = array();
 
 	/**

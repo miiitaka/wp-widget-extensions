@@ -8,7 +8,7 @@ new WP_Widget_Extensions_Uninstall();
  * Plugin Uninstall
  *
  * @author  Kazuya Takami
- * @version 1.1.0
+ * @version 1.2.0
  * @since   1.1.0
  */
 class WP_Widget_Extensions_Uninstall {
@@ -80,7 +80,7 @@ class WP_Widget_Extensions_Uninstall {
 	/**
 	 * Delete Widget Meta Option.
 	 *
-	 * @version 1.1.0
+	 * @version 1.2.0
 	 * @since   1.1.0
 	 * @param   string $option
 	 */
@@ -88,6 +88,13 @@ class WP_Widget_Extensions_Uninstall {
 		if ( get_option( $option ) ) {
 			$widget_array = get_option( $option );
 			$update_array = array();
+
+			/* Custom Posts */
+			$post_args = array(
+				'public'   => true,
+				'_builtin' => false
+			);
+			$post_types = get_post_types( $post_args, 'objects' );
 
 			foreach ( $widget_array as $key => $value ) {
 				if ( is_array( $value ) ) {
@@ -98,6 +105,9 @@ class WP_Widget_Extensions_Uninstall {
 						$value["comments_rss"],
 						$value["wordpress_org"]
 					);
+					foreach ( $post_types as $post_type ) {
+						unset( $value[ $post_type->name ] );
+					}
 				}
 				$update_array[$key] = $value;
 			}
