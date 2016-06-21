@@ -2,77 +2,76 @@
 # This file is distributed under the same license as the WordPress Default Widget Extension package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WordPress Default Widget Extension 1.1.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-widget-"
-"extentions\n"
-"POT-Creation-Date: 2016-06-14 05:05:13+00:00\n"
+"Project-Id-Version: WordPress Default Widget Extension 1.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-widget-extentions\n"
+"POT-Creation-Date: 2016-06-21 10:39:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Kazuya Takami <foundationmeister@outlook.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #: includes/wp-widget-extensions-archives.php:48
 msgid "Daily"
-msgstr ""
+msgstr "日集計"
 
 #: includes/wp-widget-extensions-archives.php:49
 msgid "Weekly"
-msgstr ""
+msgstr "週集計"
 
 #: includes/wp-widget-extensions-archives.php:50
 msgid "Monthly"
-msgstr ""
+msgstr "月集計"
 
 #: includes/wp-widget-extensions-archives.php:51
 msgid "Yearly"
-msgstr ""
+msgstr "年集計"
 
 #: includes/wp-widget-extensions-archives.php:57
 msgid "Type:"
-msgstr ""
+msgstr "タイプ:"
 
 #: includes/wp-widget-extensions-archives.php:67
 #: includes/wp-widget-extensions-categories.php:65
 #: includes/wp-widget-extensions-tag-cloud.php:65
 msgid "Ascending order"
-msgstr ""
+msgstr "昇順"
 
 #: includes/wp-widget-extensions-archives.php:68
 #: includes/wp-widget-extensions-categories.php:66
 #: includes/wp-widget-extensions-tag-cloud.php:66
 msgid "Descending order"
-msgstr ""
+msgstr "降順"
 
 #: includes/wp-widget-extensions-archives.php:74
 #: includes/wp-widget-extensions-categories.php:72
 #: includes/wp-widget-extensions-tag-cloud.php:72
 msgid "Order by:"
-msgstr ""
+msgstr "並び順"
 
 #: includes/wp-widget-extensions-archives.php:83
 msgid "Number of archive to show:"
-msgstr ""
+msgstr "アーカイブ表示数"
 
 #: includes/wp-widget-extensions-categories.php:48
 #: includes/wp-widget-extensions-tag-cloud.php:48
 msgid "Name order"
-msgstr ""
+msgstr "名前順"
 
 #: includes/wp-widget-extensions-categories.php:49
 #: includes/wp-widget-extensions-tag-cloud.php:49
 msgid "Posts Count order"
-msgstr ""
+msgstr "投稿数順"
 
 #: includes/wp-widget-extensions-categories.php:55
 #: includes/wp-widget-extensions-tag-cloud.php:55
 msgid "Sort by:"
-msgstr ""
+msgstr "ソート順"
 
 #: includes/wp-widget-extensions-meta.php:40
 msgid "Site Admin"
-msgstr ""
+msgstr "サイト管理者"
 
 #: includes/wp-widget-extensions-meta.php:48
 msgid "Log in"
@@ -83,50 +82,50 @@ msgid "Log out"
 msgstr ""
 
 #: includes/wp-widget-extensions-meta.php:56
-#: includes/wp-widget-extensions-meta.php:135
+#: includes/wp-widget-extensions-meta.php:161
 msgid "Entries <abbr title=\"Really Simple Syndication\">RSS</abbr>"
 msgstr ""
 
-#: includes/wp-widget-extensions-meta.php:64
-#: includes/wp-widget-extensions-meta.php:139
+#: includes/wp-widget-extensions-meta.php:79
+#: includes/wp-widget-extensions-meta.php:183
 msgid "Comments <abbr title=\"Really Simple Syndication\">RSS</abbr>"
 msgstr ""
 
-#: includes/wp-widget-extensions-meta.php:72
-#: includes/wp-widget-extensions-meta.php:150
+#: includes/wp-widget-extensions-meta.php:87
+#: includes/wp-widget-extensions-meta.php:194
 msgctxt "meta widget link text"
 msgid "WordPress.org"
 msgstr ""
 
-#: includes/wp-widget-extensions-meta.php:110
+#: includes/wp-widget-extensions-meta.php:136
 msgid "Meta"
 msgstr ""
 
-#: includes/wp-widget-extensions-meta.php:148
+#: includes/wp-widget-extensions-meta.php:192
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: includes/wp-widget-extensions-meta.php:149
+#: includes/wp-widget-extensions-meta.php:193
 msgid ""
 "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "WordPress Default Widget Extension"
-msgstr ""
+msgstr "WordPress Default Widget Extension"
 
 #. Plugin URI of the plugin/theme
 msgid "https://github.com/miiitaka/wp-widget-extensions"
-msgstr ""
+msgstr "https://github.com/miiitaka/wp-widget-extensions"
 
 #. Description of the plugin/theme
 msgid "Plug-ins that extend the standard of the widget function."
-msgstr ""
+msgstr "標準ウィジェットに機能追加するプラグインです。"
 
 #. Author of the plugin/theme
 msgid "Kazuya Takami"
-msgstr ""
+msgstr "Kazuya Takami"
 
 #. Author URI of the plugin/theme
 msgid "http://programp.com/"
-msgstr ""
+msgstr "http://programp.com/"

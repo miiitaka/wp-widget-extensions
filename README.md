@@ -1,5 +1,5 @@
 # default-widget-extentions
-WordPress : Plug-in Default Widget Extentions. 
+WordPress : Plug-in Default Widget Extensions. 
 
 Plug-ins that extend the standard of the widget function.
 
@@ -31,6 +31,8 @@ Plug-ins that extend the standard of the widget function.
 ## Changelog
 
 ### 1.2.0 (2016-06-21)
+
+- Added : Japanese translation.
 - Updated : Widget meta customized(custom posts RSS).
 
 ### 1.1.0 (2016-06-14)
