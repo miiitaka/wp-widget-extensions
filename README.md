@@ -30,6 +30,9 @@ Plug-ins that extend the standard of the widget function.
 
 ## Changelog
 
+### 1.2.1 (2016-06-25)
+- Check : WordPress version 4.5.3 operation check.
+
 ### 1.2.0 (2016-06-21)
 
 - Added : Japanese translation.
