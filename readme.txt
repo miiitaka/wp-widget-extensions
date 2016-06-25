@@ -2,8 +2,8 @@
 Contributors: miiitaka
 Tags: widget, category, archive, tag, meta
 Requires at least: 4.5.2
-Tested up to: 4.5.2
-Stable tag: 1.2.0
+Tested up to: 4.5.3
+Stable tag: 1.2.1
 
 Plug-ins that extend the standard of the widget function.
 
@@ -39,6 +39,9 @@ Plug-ins that extend the standard of the widget function.
 * The plug-in is activated.
 
 == Changelog ==
+
+= 1.2.1 (2016-06-25) =
+* Check : WordPress version 4.5.3 operation check.
 
 = 1.2.0 (2016-06-21) =
 * Added : Japanese translation.
