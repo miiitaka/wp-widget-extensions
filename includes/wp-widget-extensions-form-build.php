@@ -3,7 +3,7 @@
  * Admin Widget Form Build
  *
  * @author  Kazuya Takami
- * @version 1.1.0
+ * @version 1.3.0
  * @since   1.1.0
  */
 
@@ -43,6 +43,24 @@ class WP_Widget_Extensions_Form_Build {
 	public function number ( $id, $name, $value, $text ) {
 		printf( '<p><label for="%s">%s</label>', $id, $text );
 		printf( '<input type="number" id="%s" name="%s" value="%s" class="small-text">', $id, $name, esc_attr( $value ) );
+		echo '</p>';
+	}
+
+	/**
+	 * Widget Form Text.
+	 *
+	 * @version 1.3.0
+	 * @since   1.3.0
+	 * @access  private
+	 * @param   string  $id
+	 * @param   string  $name
+	 * @param   boolean $value
+	 * @param   string  $text
+	 * @param   string  $placeholder
+	 */
+	public function text ( $id, $name, $value, $text, $placeholder ) {
+		printf( '<p><label for="%s">%s</label>', $id, $text );
+		printf( '<input type="text" id="%s" name="%s" value="%s" class="widefat" placeholder="%s">', $id, $name, esc_attr( $value ), esc_attr( $placeholder ) );
 		echo '</p>';
 	}
 

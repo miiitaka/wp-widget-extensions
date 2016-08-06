@@ -40,6 +40,9 @@ Plug-ins that extend the standard of the widget function.
 
 == Changelog ==
 
+= 1.3.0 (2016-08-xx) =
+* Added : Exclusion category ids.
+
 = 1.2.1 (2016-06-25) =
 * Check : WordPress version 4.5.3 operation check.
 
