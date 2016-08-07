@@ -48,11 +48,11 @@ msgstr "降順"
 #: includes/wp-widget-extensions-categories.php:72
 #: includes/wp-widget-extensions-tag-cloud.php:72
 msgid "Order by:"
-msgstr "並び順"
+msgstr "並び順:"
 
 #: includes/wp-widget-extensions-archives.php:83
 msgid "Number of archive to show:"
-msgstr "アーカイブ表示数"
+msgstr "アーカイブ表示数:"
 
 #: includes/wp-widget-extensions-categories.php:48
 #: includes/wp-widget-extensions-tag-cloud.php:48

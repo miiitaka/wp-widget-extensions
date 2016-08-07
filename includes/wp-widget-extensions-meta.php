@@ -17,7 +17,7 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 	/**
 	 * Widget Form Display.
 	 *
-	 * @version 1.2.0
+	 * @version 1.3.0
 	 * @since   1.1.0
 	 * @access  public
 	 * @param   array $instance
@@ -37,7 +37,11 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 		 */
 		$field_name = 'site_admin';
 		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = 0; }
-		$form->checkbox( $this->get_field_id( $field_name ), $this->get_field_name( $field_name ), $instance[ $field_name ], __( 'Site Admin' ) );
+		$form->checkbox(
+			$this->get_field_id( $field_name ),
+			$this->get_field_name( $field_name ),
+			$instance[ $field_name ], __( 'Site Admin' )
+		);
 		echo '<br />';
 
 		/**
@@ -45,7 +49,11 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 		 */
 		$field_name = 'site_login';
 		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = 0; }
-		$form->checkbox( $this->get_field_id( $field_name ), $this->get_field_name( $field_name ), $instance[ $field_name ], __( 'Log in' ) . ' / ' . __( 'Log out' ) );
+		$form->checkbox( $this->get_field_id( $field_name ),
+			$this->get_field_name( $field_name ),
+			$instance[ $field_name ],
+			__( 'Log in' ) . ' / ' . __( 'Log out' )
+		);
 		echo '<br />';
 
 		/**
@@ -53,7 +61,12 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 		 */
 		$field_name = 'entries_rss';
 		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = 0; }
-		$form->checkbox( $this->get_field_id( $field_name ), $this->get_field_name( $field_name ), $instance[ $field_name ], __( 'Entries <abbr title="Really Simple Syndication">RSS</abbr>' ) );
+		$form->checkbox(
+			$this->get_field_id( $field_name ),
+			$this->get_field_name( $field_name ),
+			$instance[ $field_name ],
+			__( 'Entries <abbr title="Really Simple Syndication">RSS</abbr>' )
+		);
 		echo '<br />';
 
 		/**
@@ -67,7 +80,12 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 		foreach ( $post_types as $post_type ) {
 			$field_name = esc_html( $post_type->name );
 			if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = 0; }
-			$form->checkbox( $this->get_field_id( $field_name ), $this->get_field_name( $field_name ), $instance[ $field_name ], esc_html( $post_type->label ) . ' <abbr title="Really Simple Syndication">RSS</abbr>' );
+			$form->checkbox(
+				$this->get_field_id( $field_name ),
+				$this->get_field_name( $field_name ),
+				$instance[ $field_name ],
+				esc_html( $post_type->label ) . ' <abbr title="Really Simple Syndication">RSS</abbr>'
+			);
 			echo '<br />';
 		}
 
@@ -76,7 +94,12 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 		 */
 		$field_name = 'comments_rss';
 		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = 0; }
-		$form->checkbox( $this->get_field_id( $field_name ), $this->get_field_name( $field_name ), $instance[ $field_name ], __( 'Comments <abbr title="Really Simple Syndication">RSS</abbr>' ) );
+		$form->checkbox(
+			$this->get_field_id( $field_name ),
+			$this->get_field_name( $field_name ),
+			$instance[ $field_name ],
+			__( 'Comments <abbr title="Really Simple Syndication">RSS</abbr>' )
+		);
 		echo '<br />';
 
 		/**
@@ -84,7 +107,12 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 		 */
 		$field_name = 'wordpress_org';
 		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = 0; }
-		$form->checkbox( $this->get_field_id( $field_name ), $this->get_field_name( $field_name ), $instance[ $field_name ], _x( 'WordPress.org', 'meta widget link text' ) );
+		$form->checkbox(
+			$this->get_field_id( $field_name ),
+			$this->get_field_name( $field_name ),
+			$instance[ $field_name ],
+			_x( 'WordPress.org', 'meta widget link text' )
+		);
 
 		echo '</p>';
 	}
