@@ -57,10 +57,15 @@ class WP_Widget_Extensions_Form_Build {
 	 * @param   boolean $value
 	 * @param   string  $text
 	 * @param   string  $placeholder
+	 * @param   string  $notes
 	 */
-	public function text ( $id, $name, $value, $text, $placeholder ) {
+	public function text ( $id, $name, $value, $text, $placeholder, $notes = "" ) {
 		printf( '<p><label for="%s">%s</label>', $id, $text );
 		printf( '<input type="text" id="%s" name="%s" value="%s" class="widefat" placeholder="%s">', $id, $name, esc_attr( $value ), esc_attr( $placeholder ) );
+
+		if ( !empty( $notes ) ) {
+			printf( '<br><small>%s</small>', esc_attr( $notes ) );
+		}
 		echo '</p>';
 	}
 

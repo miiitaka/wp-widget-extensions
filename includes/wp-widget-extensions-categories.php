@@ -82,8 +82,9 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 			$this->get_field_id( $field_name ),
 			$this->get_field_name( $field_name ),
 			$instance[ $field_name ],
-			__( 'Exclude Category ids:', $this->text_domain ),
-			__( 'e.g. 1,2,3'           , $this->text_domain )
+			__( 'Exclude:'                          , $this->text_domain ),
+			__( 'e.g. 1,2,3'                        , $this->text_domain ),
+			__( 'Category IDs, separated by commas.', $this->text_domain )
 		);
 	}
 
