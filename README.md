@@ -31,7 +31,7 @@ Plug-ins that extend the standard of the widget function.
 
 ## Changelog
 
-### 1.3.0 (2016-08-xx)
+### 1.3.0 (2016-08-08)
 - Added : Exclusion category ids.
 
 ### 1.2.1 (2016-06-25)
