@@ -3,7 +3,7 @@
  * Admin Widget Register
  *
  * @author  Kazuya Takami
- * @version 1.0.0
+ * @version 1.2.2
  * @since   1.0.0
  * @see     /wp-includes/widgets/class-wp-widget-categories.php
  */
@@ -25,7 +25,7 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 	/**
 	 * Widget Form Display.
 	 *
-	 * @version 1.0.0
+	 * @version 1.3.0
 	 * @since   1.0.0
 	 * @access  public
 	 * @param   array $instance
@@ -45,7 +45,7 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 		$field_name = 'orderby';
 		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = "name"; }
 		$sort_array  = array(
-			"name"  => __( "Name order",  $this->text_domain ),
+			"name"  => __( "Name order",        $this->text_domain ),
 			"count" => __( "Posts Count order", $this->text_domain )
 		);
 		$form->select(
@@ -72,12 +72,26 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 			__( 'Order by:', $this->text_domain ),
 			$order_array
 		);
+
+		/**
+		 * Exclude Category ids
+		 */
+		$field_name = 'exclude';
+		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = ""; }
+		$form->text(
+			$this->get_field_id( $field_name ),
+			$this->get_field_name( $field_name ),
+			$instance[ $field_name ],
+			__( 'Exclude:'                          , $this->text_domain ),
+			__( 'e.g. 1,2,3'                        , $this->text_domain ),
+			__( 'Category IDs, separated by commas.', $this->text_domain )
+		);
 	}
 
 	/**
 	 * Widget Form Update.
 	 *
-	 * @version 1.0.0
+	 * @version 1.3.0
 	 * @since   1.0.0
 	 * @access  public
 	 * @param   array $new_instance
@@ -89,6 +103,7 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 
 		$instance['orderby'] = sanitize_text_field( $new_instance['orderby'] );
 		$instance['order']   = sanitize_text_field( $new_instance['order'] );
+		$instance['exclude'] = sanitize_text_field( $new_instance['exclude'] );
 
 		return (array) $instance;
 	}
@@ -96,7 +111,7 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 	/**
 	 * Widget Categories Args
 	 *
-	 * @version 1.0.0
+	 * @version 1.3.0
 	 * @since   1.0.0
 	 * @access  public
 	 * @param   array $args
@@ -108,6 +123,9 @@ class WP_Widget_Extensions_Categories extends WP_Widget_Categories {
 		}
 		if ( isset( $this->instance['order'] ) ) {
 			$args['order'] = $this->instance['order'];
+		}
+		if ( isset( $this->instance['exclude'] ) ) {
+			$args['exclude'] = $this->instance['exclude'];
 		}
 
 		return (array) $args;

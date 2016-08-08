@@ -17,6 +17,7 @@ Plug-ins that extend the standard of the widget function.
 - Criteria change of the sort (Name order / Post Count order)
 - Ascending / descending order change
 - Number of archive to show
+- Exclusion category ids
 
 ### Meta Widget
 
@@ -29,6 +30,9 @@ Plug-ins that extend the standard of the widget function.
 - Ascending / Descending order change
 
 ## Changelog
+
+### 1.3.0 (2016-08-08)
+- Added : Exclusion category ids.
 
 ### 1.2.1 (2016-06-25)
 - Check : WordPress version 4.5.3 operation check.

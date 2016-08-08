@@ -3,7 +3,7 @@ Contributors: miiitaka
 Tags: widget, category, archive, tag, meta
 Requires at least: 4.5.2
 Tested up to: 4.5.3
-Stable tag: 1.2.1
+Stable tag: 1.3.0
 
 Plug-ins that extend the standard of the widget function.
 
@@ -39,6 +39,9 @@ Plug-ins that extend the standard of the widget function.
 * The plug-in is activated.
 
 == Changelog ==
+
+= 1.3.0 (2016-08-08) =
+* Added : Exclusion category ids.
 
 = 1.2.1 (2016-06-25) =
 * Check : WordPress version 4.5.3 operation check.
