@@ -11,12 +11,12 @@ Plug-ins that extend the standard of the widget function.
 
 - Changing the units of the archive
 - Ascending / descending order change
+- Number of archive to show
 
 ### Categories Widget
 
 - Criteria change of the sort (Name order / Post Count order)
 - Ascending / descending order change
-- Number of archive to show
 - Exclusion category ids
 
 ### Meta Widget

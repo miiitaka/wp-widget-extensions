@@ -2,8 +2,8 @@
 Contributors: miiitaka
 Tags: widget, category, archive, tag, meta
 Requires at least: 4.5.2
-Tested up to: 4.5.3
-Stable tag: 1.3.0
+Tested up to: 4.6.0
+Stable tag: 1.3.1
 
 Plug-ins that extend the standard of the widget function.
 
@@ -21,6 +21,7 @@ Plug-ins that extend the standard of the widget function.
 
 * Criteria change of the sort (Name order / Post Count order)
 * Ascending / Descending order change
+* Exclusion category ids
 
 = Meta Widget =
 
@@ -38,7 +39,21 @@ Plug-ins that extend the standard of the widget function.
 * It installs in `wp-content/plugins`.
 * The plug-in is activated.
 
+== Screenshots ==
+
+1. Archives Widget（ Added: Type, Order By, Number of archives to show )
+
+2. Categories Widget（ Added: Sort By, Order By, Exclude )
+
+3. Meta Widget（ Added: Checked, Custom Post RSS )
+
+4. Tag Cloud Widget（ Added: Sort By, Order By, Exclude )
+
 == Changelog ==
+
+= 1.3.1 (2016-08-17) =
+* Check : WordPress version 4.6.0 operation check.
+* Added : ScreenShots.
 
 = 1.3.0 (2016-08-08) =
 * Added : Exclusion category ids.
