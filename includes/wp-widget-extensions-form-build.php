@@ -3,7 +3,7 @@
  * Admin Widget Form Build
  *
  * @author  Kazuya Takami
- * @version 1.3.0
+ * @version 1.3.2
  * @since   1.1.0
  */
 
