@@ -2,8 +2,8 @@
 Contributors: miiitaka
 Tags: widget, category, archive, tag, meta
 Requires at least: 4.5.2
-Tested up to: 4.6.0
-Stable tag: 1.3.1
+Tested up to: 4.6.1
+Stable tag: 1.3.2
 
 Plug-ins that extend the standard of the widget function.
 
@@ -50,6 +50,10 @@ Plug-ins that extend the standard of the widget function.
 4. Tag Cloud Widget（ Added: Sort By, Order By, Exclude )
 
 == Changelog ==
+
+= 1.3.2 (2016-09-13) =
+* Check : WordPress version 4.6.1 operation check.
+* Fixed : HTML structure error.
 
 = 1.3.1 (2016-08-17) =
 * Check : WordPress version 4.6.0 operation check.
