@@ -31,6 +31,14 @@ Plug-ins that extend the standard of the widget function.
 
 ## Changelog
 
+### 1.3.2 (2016-09-13)
+- Check : WordPress version 4.6.1 operation check.
+- Fixed : HTML structure error.
+
+### 1.3.1 (2016-08-17)
+- Check : WordPress version 4.6.0 operation check.
+- Added : ScreenShots.
+
 ### 1.3.0 (2016-08-08)
 - Added : Exclusion category ids.
 

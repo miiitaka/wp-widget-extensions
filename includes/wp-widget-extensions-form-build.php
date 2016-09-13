@@ -3,7 +3,7 @@
  * Admin Widget Form Build
  *
  * @author  Kazuya Takami
- * @version 1.3.0
+ * @version 1.3.2
  * @since   1.1.0
  */
 
@@ -32,7 +32,7 @@ class WP_Widget_Extensions_Form_Build {
 	/**
 	 * Widget Form Number.
 	 *
-	 * @version 1.1.0
+	 * @version 1.3.2
 	 * @since   1.1.0
 	 * @access  private
 	 * @param   string  $id
@@ -41,7 +41,8 @@ class WP_Widget_Extensions_Form_Build {
 	 * @param   string  $text
 	 */
 	public function number ( $id, $name, $value, $text ) {
-		printf( '<p><label for="%s">%s</label>', $id, $text );
+		echo '<p>';
+		printf( '<label for="%s">%s</label>', $id, $text );
 		printf( '<input type="number" id="%s" name="%s" value="%s" class="small-text">', $id, $name, esc_attr( $value ) );
 		echo '</p>';
 	}
@@ -49,7 +50,7 @@ class WP_Widget_Extensions_Form_Build {
 	/**
 	 * Widget Form Text.
 	 *
-	 * @version 1.3.0
+	 * @version 1.3.2
 	 * @since   1.3.0
 	 * @access  private
 	 * @param   string  $id
@@ -59,12 +60,13 @@ class WP_Widget_Extensions_Form_Build {
 	 * @param   string  $placeholder
 	 * @param   string  $notes
 	 */
-	public function text ( $id, $name, $value, $text, $placeholder, $notes = "" ) {
-		printf( '<p><label for="%s">%s</label>', $id, $text );
+	public function text ( $id, $name, $value, $text, $placeholder = "", $notes = "" ) {
+		echo '<p>';
+		printf( '<label for="%s">%s</label>', $id, $text );
 		printf( '<input type="text" id="%s" name="%s" value="%s" class="widefat" placeholder="%s">', $id, $name, esc_attr( $value ), esc_attr( $placeholder ) );
 
 		if ( !empty( $notes ) ) {
-			printf( '<br><small>%s</small>', esc_attr( $notes ) );
+			printf( '<small>%s</small>', esc_attr( $notes ) );
 		}
 		echo '</p>';
 	}
@@ -72,7 +74,7 @@ class WP_Widget_Extensions_Form_Build {
 	/**
 	 * Widget Form Select.
 	 *
-	 * @version 1.1.0
+	 * @version 1.3.2
 	 * @since   1.1.0
 	 * @access  private
 	 * @param   string  $id
@@ -82,6 +84,7 @@ class WP_Widget_Extensions_Form_Build {
 	 * @param   array   $option_array
 	 */
 	public function select ( $id, $name, $value, $text, array $option_array ) {
+		echo '<p>';
 		printf( '<label for="%s">%s</label><br>', $id, $text );
 		printf( '<select id="%s" name="%s" class="widefat">', $id, $name );
 
