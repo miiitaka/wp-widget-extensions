@@ -28,6 +28,10 @@ Plug-ins that extend the standard of the widget function.
 * Enabled / Disabled select
 * View Custom Post RSS
 
+= Pages Widget =
+
+* Hierarchy of pages select
+
 = Tag Cloud Widget =
 
 * Criteria change of the sort (Name order / Tag Count order)
@@ -50,6 +54,9 @@ Plug-ins that extend the standard of the widget function.
 4. Tag Cloud Widget（ Added: Sort By, Order By, Exclude )
 
 == Changelog ==
+
+= 1.4.0 (2016-xx-xx) =
+* Added : Hierarchy Select a page in the page widget.
 
 = 1.3.2 (2016-09-13) =
 * Check : WordPress version 4.6.1 operation check.
