@@ -8,7 +8,7 @@ new WP_Widget_Extensions_Uninstall();
  * Plugin Uninstall
  *
  * @author  Kazuya Takami
- * @version 1.2.0
+ * @version 1.4.0
  * @since   1.1.0
  */
 class WP_Widget_Extensions_Uninstall {
@@ -16,13 +16,14 @@ class WP_Widget_Extensions_Uninstall {
 	/**
 	 * Constructor Define.
 	 *
-	 * @version 1.1.0
+	 * @version 1.4.0
 	 * @since   1.1.0
 	 */
 	public function __construct () {
 		$this->delete_widget_archives( "widget_archives" );
 		$this->delete_widget_categories( "widget_categories" );
 		$this->delete_widget_meta( "widget_meta" );
+		$this->delete_widget_pages( "widget_pages" );
 		$this->delete_widget_tag_cloud( "widget_tag_cloud" );
 	}
 
@@ -55,7 +56,7 @@ class WP_Widget_Extensions_Uninstall {
 	/**
 	 * Delete Widget Categories Option.
 	 *
-	 * @version 1.1.0
+	 * @version 1.3.0
 	 * @since   1.1.0
 	 * @param   string $option
 	 */
@@ -68,7 +69,8 @@ class WP_Widget_Extensions_Uninstall {
 				if ( is_array( $value ) ) {
 					unset(
 						$value["order"],
-						$value["orderby"]
+						$value["orderby"],
+						$value["exclude"]
 					);
 				}
 				$update_array[$key] = $value;
@@ -108,6 +110,30 @@ class WP_Widget_Extensions_Uninstall {
 					foreach ( $post_types as $post_type ) {
 						unset( $value[ $post_type->name ] );
 					}
+				}
+				$update_array[$key] = $value;
+			}
+			update_option( $option, $update_array );
+		}
+	}
+
+	/**
+	 * Delete Widget Pages Option.
+	 *
+	 * @version 1.4.0
+	 * @since   1.4.0
+	 * @param   string $option
+	 */
+	private function delete_widget_pages ( $option ) {
+		if ( get_option( $option ) ) {
+			$widget_array = get_option( $option );
+			$update_array = array();
+
+			foreach ( $widget_array as $key => $value ) {
+				if ( is_array( $value ) ) {
+					unset(
+						$value["depth"]
+					);
 				}
 				$update_array[$key] = $value;
 			}
