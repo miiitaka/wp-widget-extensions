@@ -7,7 +7,7 @@ Version: 1.4.0
 Author: Kazuya Takami
 Author URI: http://programp.com/
 License: GPLv2 or later
-Text Domain: wp-widget-extensions
+Text Domain: wp-widget-extentions
 Domain Path: /languages
 */
 new WP_Widget_Extensions();
