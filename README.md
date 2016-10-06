@@ -35,7 +35,7 @@ Plug-ins that extend the standard of the widget function.
 
 ## Changelog
 
-### 1.4.0 (2016-xx-xx)
+### 1.4.0 (2016-10-06)
 - Added : Hierarchy Select a page in the page widget.
 
 ### 1.3.2 (2016-09-13)

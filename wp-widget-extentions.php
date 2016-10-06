@@ -3,11 +3,11 @@
 Plugin Name: WordPress Default Widget Extension
 Plugin URI: https://github.com/miiitaka/wp-widget-extensions
 Description: Plug-ins that extend the standard of the widget function.
-Version: 1.3.2
+Version: 1.4.0
 Author: Kazuya Takami
 Author URI: http://programp.com/
 License: GPLv2 or later
-Text Domain: wp-widget-extensions
+Text Domain: wp-widget-extentions
 Domain Path: /languages
 */
 new WP_Widget_Extensions();
