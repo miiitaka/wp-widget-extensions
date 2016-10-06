@@ -16,7 +16,7 @@ new WP_Widget_Extensions();
  * Basic Class
  *
  * @author  Kazuya Takami
- * @version 1.1.0
+ * @version 1.4.0
  * @since   1.0.0
  */
 class WP_Widget_Extensions {
