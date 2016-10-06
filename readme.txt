@@ -3,7 +3,7 @@ Contributors: miiitaka
 Tags: widget, category, archive, tag, meta
 Requires at least: 4.5.2
 Tested up to: 4.6.1
-Stable tag: 1.3.2
+Stable tag: 1.4.0
 
 Plug-ins that extend the standard of the widget function.
 
@@ -55,7 +55,7 @@ Plug-ins that extend the standard of the widget function.
 
 == Changelog ==
 
-= 1.4.0 (2016-xx-xx) =
+= 1.4.0 (2016-10-06) =
 * Added : Hierarchy Select a page in the page widget.
 
 = 1.3.2 (2016-09-13) =
