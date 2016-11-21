@@ -133,7 +133,7 @@ class WP_Widget_Extensions_Tag_Cloud extends WP_Widget_Tag_Cloud {
 			$instance[ $field_name ],
 			__( 'Text Separator(Display format is Flat only):' , $this->text_domain ),
 			"",
-			"Allow only HTML tags for br, p, and span."
+			__( 'Allow only HTML tags for br, p, and span.' , $this->text_domain )
 		);
 
 		/**
