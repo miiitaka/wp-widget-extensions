@@ -2,14 +2,15 @@
 # This file is distributed under the same license as the WordPress Default Widget Extension package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WordPress Default Widget Extension 1.4.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-widget-extentions\n"
-"POT-Creation-Date: 2016-10-06 04:59:02+00:00\n"
+"Project-Id-Version: WordPress Default Widget Extension 1.5.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-widget-"
+"extentions\n"
+"POT-Creation-Date: 2016-11-21 09:33:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Kazuya Takami <foundationmeister@outlook.com>\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #: includes/wp-widget-extensions-archives.php:48
@@ -34,19 +35,19 @@ msgstr ""
 
 #: includes/wp-widget-extensions-archives.php:67
 #: includes/wp-widget-extensions-categories.php:65
-#: includes/wp-widget-extensions-tag-cloud.php:65
+#: includes/wp-widget-extensions-tag-cloud.php:162
 msgid "Ascending order"
 msgstr ""
 
 #: includes/wp-widget-extensions-archives.php:68
 #: includes/wp-widget-extensions-categories.php:66
-#: includes/wp-widget-extensions-tag-cloud.php:66
+#: includes/wp-widget-extensions-tag-cloud.php:163
 msgid "Descending order"
 msgstr ""
 
 #: includes/wp-widget-extensions-archives.php:74
 #: includes/wp-widget-extensions-categories.php:72
-#: includes/wp-widget-extensions-tag-cloud.php:72
+#: includes/wp-widget-extensions-tag-cloud.php:170
 msgid "Order by:"
 msgstr ""
 
@@ -55,17 +56,17 @@ msgid "Number of archives to show:"
 msgstr ""
 
 #: includes/wp-widget-extensions-categories.php:48
-#: includes/wp-widget-extensions-tag-cloud.php:48
+#: includes/wp-widget-extensions-tag-cloud.php:145
 msgid "Name order"
 msgstr ""
 
 #: includes/wp-widget-extensions-categories.php:49
-#: includes/wp-widget-extensions-tag-cloud.php:49
+#: includes/wp-widget-extensions-tag-cloud.php:146
 msgid "Posts Count order"
 msgstr ""
 
 #: includes/wp-widget-extensions-categories.php:55
-#: includes/wp-widget-extensions-tag-cloud.php:55
+#: includes/wp-widget-extensions-tag-cloud.php:152
 msgid "Sort by:"
 msgstr ""
 
@@ -132,6 +133,46 @@ msgstr ""
 
 #: includes/wp-widget-extensions-pages.php:55
 msgid "Hierarchy of pages:"
+msgstr ""
+
+#: includes/wp-widget-extensions-tag-cloud.php:51
+msgid "Smallest Font Size:"
+msgstr ""
+
+#: includes/wp-widget-extensions-tag-cloud.php:63
+msgid "Largest Font Size:"
+msgstr ""
+
+#: includes/wp-widget-extensions-tag-cloud.php:92
+msgid "Font unit:"
+msgstr ""
+
+#: includes/wp-widget-extensions-tag-cloud.php:105
+msgid "Number of tags to show:"
+msgstr ""
+
+#: includes/wp-widget-extensions-tag-cloud.php:114
+msgid "Flat Display"
+msgstr ""
+
+#: includes/wp-widget-extensions-tag-cloud.php:115
+msgid "List Display"
+msgstr ""
+
+#: includes/wp-widget-extensions-tag-cloud.php:121
+msgid "Display Format:"
+msgstr ""
+
+#: includes/wp-widget-extensions-tag-cloud.php:134
+msgid "Text Separator(Display format is Flat only):"
+msgstr ""
+
+#: includes/wp-widget-extensions-tag-cloud.php:136
+msgid "Allow only HTML tags for br, p, and span."
+msgstr ""
+
+#: includes/wp-widget-extensions-tag-cloud.php:164
+msgid "Random order"
 msgstr ""
 
 #. Plugin Name of the plugin/theme

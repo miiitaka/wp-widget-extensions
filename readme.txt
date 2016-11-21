@@ -3,7 +3,7 @@ Contributors: miiitaka
 Tags: widget, category, archive, tag, meta
 Requires at least: 4.5.2
 Tested up to: 4.6.1
-Stable tag: 1.4.0
+Stable tag: 1.5.0
 
 Plug-ins that extend the standard of the widget function.
 
@@ -51,9 +51,20 @@ Plug-ins that extend the standard of the widget function.
 
 3. Meta Widget（ Added: Checked, Custom Post RSS )
 
-4. Tag Cloud Widget（ Added: Sort By, Order By, Exclude )
+4. Tag Cloud Widget（ Added: Font Size, Font Unit, Display Format,Number of tags to show, Separate Text, Sort By, Order By )
+
+5. Page Widget（ Added: Hierarchy )
 
 == Changelog ==
+
+= 1.5.0 (2016-11-21) =
+* Updated : Widget Tag Cloud smallest font-size set.
+* Updated : Widget Tag Cloud largest font-size set.
+* Updated : Widget Tag Cloud font-unit set.
+* Updated : Widget Tag Cloud sort "RANDOM" set.
+* Updated : Widget Tag Cloud display format set.
+* Updated : Widget Tag Cloud Number of tags to show set.
+* Updated : Widget Tag Cloud separate set.
 
 = 1.4.0 (2016-10-06) =
 * Added : Hierarchy Select a page in the page widget.
