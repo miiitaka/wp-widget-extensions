@@ -156,6 +156,12 @@ class WP_Widget_Extensions_Uninstall {
 			foreach ( $widget_array as $key => $value ) {
 				if ( is_array( $value ) ) {
 					unset(
+						$value['smallest'],
+						$value['largest'],
+						$value['unit'],
+						$value['number'],
+						$value['format'],
+						$value['separator'],
 						$value["order"],
 						$value["orderby"]
 					);
