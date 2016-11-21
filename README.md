@@ -30,7 +30,7 @@ Plug-ins that extend the standard of the widget function.
 
 ### Tag Cloud Widget
 
-- Criteria change of the sort (Name order / Tag Count order)
+- Criteria change of the sort (Name order / Tag Count order / Random Order)
 - Ascending / Descending order change
 
 ## Changelog
