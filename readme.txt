@@ -51,7 +51,9 @@ Plug-ins that extend the standard of the widget function.
 
 3. Meta Widget（ Added: Checked, Custom Post RSS )
 
-4. Tag Cloud Widget（ Added: Sort By, Order By, Exclude )
+4. Tag Cloud Widget（ Added: Font Size, Font Unit, Display Format,Number of tags to show, Separate Text, Sort By, Order By )
+
+5. Page Widget（ Added: Hierarchy )
 
 == Changelog ==
 
