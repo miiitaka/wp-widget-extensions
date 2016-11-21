@@ -35,6 +35,15 @@ Plug-ins that extend the standard of the widget function.
 
 ## Changelog
 
+### 1.5.0 (2016-11-21)
+- Updated : Widget Tag Cloud smallest font-size set.
+- Updated : Widget Tag Cloud largest font-size set.
+- Updated : Widget Tag Cloud font-unit set.
+- Updated : Widget Tag Cloud sort "RANDOM" set.
+- Updated : Widget Tag Cloud display format set.
+- Updated : Widget Tag Cloud Number of tags to show set.
+- Updated : Widget Tag Cloud separate set.
+
 ### 1.4.0 (2016-10-06)
 - Added : Hierarchy Select a page in the page widget.
 
