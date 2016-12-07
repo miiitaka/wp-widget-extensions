@@ -3,7 +3,7 @@
  * Admin Widget Register
  *
  * @author  Kazuya Takami
- * @version 1.0.0
+ * @version 1.5.1
  * @since   1.0.0
  * @see     /wp-includes/widgets/class-wp-widget-archives.php
  */
@@ -25,7 +25,7 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 	/**
 	 * Widget Form Display.
 	 *
-	 * @version 1.0.0
+	 * @version 1.5.1
 	 * @since   1.0.0
 	 * @access  public
 	 * @param   array $instance
@@ -38,6 +38,7 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 		$form = new WP_Widget_Extensions_Form_Build();
 
 		echo '<hr>';
+		echo '<p><strong>[ Plugin: WordPress Default Widget Extension ]</strong></p>';
 
 		/**
 		 * Type Element

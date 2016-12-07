@@ -3,7 +3,7 @@
  * Admin Widget Register ( Meta Widget )
  *
  * @author  Kazuya Takami
- * @version 1.2.0
+ * @version 1.5.1
  * @since   1.1.0
  * @see     /wp-includes/widgets/class-wp-widget-meta.php
  * @see     wp-widget-extensions-form-build.php
@@ -17,7 +17,7 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 	/**
 	 * Widget Form Display.
 	 *
-	 * @version 1.3.0
+	 * @version 1.5.1
 	 * @since   1.1.0
 	 * @access  public
 	 * @param   array $instance
@@ -30,6 +30,7 @@ class WP_Widget_Extensions_Meta extends WP_Widget_Meta {
 		$form = new WP_Widget_Extensions_Form_Build();
 
 		echo '<hr>';
+		echo '<p><strong>[ Plugin: WordPress Default Widget Extension ]</strong></p>';
 		echo '<p>';
 
 		/**
