@@ -35,6 +35,9 @@ Plug-ins that extend the standard of the widget function.
 
 ## Changelog
 
+### 1.5.1 (2016-12-07)
+- Check : WordPress version 4.7.0 operation check.
+
 ### 1.5.0 (2016-11-21)
 - Updated : Widget Tag Cloud smallest font-size set.
 - Updated : Widget Tag Cloud largest font-size set.
