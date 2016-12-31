@@ -2,7 +2,7 @@
 Contributors: miiitaka
 Tags: widget, category, archive, tag, meta
 Requires at least: 4.5.2
-Tested up to: 4.6.1
+Tested up to: 4.7.0
 Stable tag: 1.5.1
 
 Plug-ins that extend the standard of the widget function.

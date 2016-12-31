@@ -5,7 +5,7 @@ Plugin URI: https://github.com/miiitaka/wp-widget-extensions
 Description: Plug-ins that extend the standard of the widget function.
 Version: 1.5.1
 Author: Kazuya Takami
-Author URI: http://programp.com/
+Author URI: http://www.terakoya.work/
 License: GPLv2 or later
 Text Domain: wp-widget-extentions
 Domain Path: /languages
