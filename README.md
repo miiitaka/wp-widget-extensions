@@ -35,6 +35,9 @@ Plug-ins that extend the standard of the widget function.
 
 ## Changelog
 
+### 1.5.2 (2017-01-12)
+- Check : WordPress version 4.7.1 operation check.
+
 ### 1.5.1 (2016-12-07)
 - Check : WordPress version 4.7.0 operation check.
 
