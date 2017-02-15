@@ -87,6 +87,7 @@ class WP_Widget_Extensions {
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-categories.php' );
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-meta.php' );
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-pages.php' );
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-search.php' );
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-tag-cloud.php' );
 	}
 }
