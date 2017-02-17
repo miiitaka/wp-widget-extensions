@@ -1,9 +1,4 @@
 <?php
-if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
-	exit;
-}
-new WP_Widget_Extensions_Uninstall();
-
 /**
  * Plugin Uninstall
  *
@@ -11,6 +6,12 @@ new WP_Widget_Extensions_Uninstall();
  * @version 1.4.0
  * @since   1.1.0
  */
+
+if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
+	exit;
+}
+new WP_Widget_Extensions_Uninstall();
+
 class WP_Widget_Extensions_Uninstall {
 
 	/**
