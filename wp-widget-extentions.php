@@ -3,7 +3,7 @@
 Plugin Name: WordPress Default Widget Extension
 Plugin URI: https://github.com/miiitaka/wp-widget-extensions
 Description: Plug-ins that extend the standard of the widget function.
-Version: 1.5.4
+Version: 1.5.5
 Author: Kazuya Takami
 Author URI: https://www.terakoya.work/
 License: GPLv2 or later
@@ -88,7 +88,6 @@ class WP_Widget_Extensions {
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-categories.php' );
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-meta.php' );
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-pages.php' );
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-search.php' );
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-tag-cloud.php' );
 	}
 }

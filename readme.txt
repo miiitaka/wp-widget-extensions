@@ -3,7 +3,7 @@ Contributors: miiitaka
 Tags: widget, category, archive, tag, meta
 Requires at least: 4.5.2
 Tested up to: 4.7.3
-Stable tag: 1.5.4
+Stable tag: 1.5.5
 
 Plug-ins that extend the standard of the widget function.
 
@@ -57,7 +57,7 @@ Plug-ins that extend the standard of the widget function.
 
 == Changelog ==
 
-= 1.5.4 (2017-03-10) =
+= 1.5.5 (2017-03-10) =
 * Check : WordPress version 4.7.3 operation check.
 
 = 1.5.3 (2017-01-31) =
