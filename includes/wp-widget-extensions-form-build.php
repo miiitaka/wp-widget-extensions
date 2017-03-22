@@ -3,7 +3,7 @@
  * Admin Widget Form Build
  *
  * @author  Kazuya Takami
- * @version 1.3.2
+ * @version 1.6.0
  * @since   1.1.0
  */
 
@@ -69,6 +69,25 @@ class WP_Widget_Extensions_Form_Build {
 			printf( '<small>%s</small>', esc_attr( $notes ) );
 		}
 		echo '</p>';
+	}
+
+	/**
+	 * Widget Form Text(Color Picker).
+	 *
+	 * @version 1.6.0
+	 * @since   1.6.0
+	 * @access  private
+	 * @param   string  $id
+	 * @param   string  $name
+	 * @param   boolean $value
+	 * @param   string  $text
+	 * @param   string  $class
+	 */
+	public function text_color_picker ( $id, $name, $value, $text, $class ) {
+		echo '<p style="margin: 5px 0;">';
+		printf( '<label for="%s">%s</label>', $id, $text );
+		echo '</p>';
+		printf( '<input type="text" id="%s" name="%s" value="%s" class="widefat %s">', $id, $name, esc_attr( $value ), $class );
 	}
 
 	/**
