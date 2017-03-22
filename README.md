@@ -13,6 +13,10 @@ Plug-ins that extend the standard of the widget function.
 - Ascending / descending order change
 - Number of archive to show
 
+### Calendar Widget
+
+- Change background color and character color on Saturday · Sunday
+
 ### Categories Widget
 
 - Criteria change of the sort (Name order / Post Count order)
@@ -34,6 +38,9 @@ Plug-ins that extend the standard of the widget function.
 - Ascending / Descending order change
 
 ## Changelog
+
+### 1.6.0 (2017-03-22)
+- Added : Widget Calendar change background color and character color on Saturday · Sunday.
 
 ### 1.5.5 (2017-03-10)
 - Check : WordPress version 4.7.3 operation check.

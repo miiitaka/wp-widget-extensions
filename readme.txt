@@ -3,7 +3,7 @@ Contributors: miiitaka
 Tags: widget, category, archive, tag, meta
 Requires at least: 4.5.2
 Tested up to: 4.7.3
-Stable tag: 1.5.5
+Stable tag: 1.6.0
 
 Plug-ins that extend the standard of the widget function.
 
@@ -16,6 +16,10 @@ Plug-ins that extend the standard of the widget function.
 * Changing the units of the archive
 * Ascending / Descending order change
 * Number of archive to show
+
+= Calendar Widget =
+
+* Change background color and character color on Saturday · Sunday
 
 = Categories Widget =
 
@@ -56,6 +60,9 @@ Plug-ins that extend the standard of the widget function.
 5. Page Widget（ Added: Hierarchy )
 
 == Changelog ==
+
+= 1.6.0 (2017-03-22) =
+* Added : Widget Calendar change background color and character color on Saturday · Sunday.
 
 = 1.5.5 (2017-03-10) =
 * Check : WordPress version 4.7.3 operation check.
