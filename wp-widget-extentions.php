@@ -3,7 +3,7 @@
 Plugin Name: WordPress Default Widget Extension
 Plugin URI: https://github.com/miiitaka/wp-widget-extensions
 Description: Plug-ins that extend the standard of the widget function.
-Version: 1.5.5
+Version: 1.6.0
 Author: Kazuya Takami
 Author URI: https://www.terakoya.work/
 License: GPLv2 or later
@@ -16,7 +16,7 @@ new WP_Widget_Extensions();
  * Basic Class
  *
  * @author  Kazuya Takami
- * @version 1.5.0
+ * @version 1.6.0
  * @since   1.0.0
  */
 class WP_Widget_Extensions {
@@ -80,11 +80,12 @@ class WP_Widget_Extensions {
 	/**
 	 * Widget Register.
 	 *
-	 * @version 1.4.0
+	 * @version 1.6.0
 	 * @since   1.0.0
 	 */
 	public function widget_init () {
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-archives.php' );
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-calendar.php' );
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-categories.php' );
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-meta.php' );
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-pages.php' );

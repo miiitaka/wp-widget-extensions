@@ -3,7 +3,7 @@
  * Plugin Uninstall
  *
  * @author  Kazuya Takami
- * @version 1.4.0
+ * @version 1.6.0
  * @since   1.1.0
  */
 
@@ -17,11 +17,12 @@ class WP_Widget_Extensions_Uninstall {
 	/**
 	 * Constructor Define.
 	 *
-	 * @version 1.4.0
+	 * @version 1.6.0
 	 * @since   1.1.0
 	 */
 	public function __construct () {
 		$this->delete_widget_archives( "widget_archives" );
+		$this->delete_widget_calendar( "widget_calendar" );
 		$this->delete_widget_categories( "widget_categories" );
 		$this->delete_widget_meta( "widget_meta" );
 		$this->delete_widget_pages( "widget_pages" );
@@ -46,6 +47,33 @@ class WP_Widget_Extensions_Uninstall {
 						$value["type"],
 						$value["order"],
 						$value["limit"]
+					);
+				}
+				$update_array[$key] = $value;
+			}
+			update_option( $option, $update_array );
+		}
+	}
+
+	/**
+	 * Delete Widget Categories Option.
+	 *
+	 * @version 1.6.0
+	 * @since   1.6.0
+	 * @param   string $option
+	 */
+	private function delete_widget_calendar ( $option ) {
+		if ( get_option( $option ) ) {
+			$widget_array = get_option( $option );
+			$update_array = array();
+
+			foreach ( $widget_array as $key => $value ) {
+				if ( is_array( $value ) ) {
+					unset(
+						$value["sat-background-color"],
+						$value["sat-font-color"],
+						$value["sun-background-color"],
+						$value["sun-font-color"]
 					);
 				}
 				$update_array[$key] = $value;
