@@ -73,7 +73,7 @@ class WP_Widget_Extensions_Uninstall {
 						$value["sat-background-color"],
 						$value["sat-font-color"],
 						$value["sun-background-color"],
-						$value["sat-font-color"]
+						$value["sun-font-color"]
 					);
 				}
 				$update_array[$key] = $value;
