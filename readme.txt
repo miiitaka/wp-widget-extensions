@@ -2,8 +2,8 @@
 Contributors: miiitaka
 Tags: widget, category, archive, tag, meta
 Requires at least: 4.5.2
-Tested up to: 4.7.4
-Stable tag: 1.6.1
+Tested up to: 4.7.5
+Stable tag: 1.6.2
 
 Plug-ins that extend the standard of the widget function.
 
@@ -60,6 +60,9 @@ Plug-ins that extend the standard of the widget function.
 5. Page Widget（ Added: Hierarchy )
 
 == Changelog ==
+
+= 1.6.2 (2017-05-17) =
+* Check : WordPress version 4.7.5 operation check.
 
 = 1.6.1 (2017-04-24) =
 * Check : WordPress version 4.7.4 operation check.
