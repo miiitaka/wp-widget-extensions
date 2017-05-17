@@ -39,8 +39,11 @@ Plug-ins that extend the standard of the widget function.
 
 ## Changelog
 
+### 1.6.2 (2017-05-17)
+- Check : WordPress version 4.7.5 operation check.
+
 ### 1.6.1 (2017-04-24)
-* Check : WordPress version 4.7.4 operation check.
+- Check : WordPress version 4.7.4 operation check.
 
 ### 1.6.0 (2017-03-22)
 - Added : Widget Calendar change background color and character color on Saturday · Sunday.
