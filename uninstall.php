@@ -26,6 +26,7 @@ class WP_Widget_Extensions_Uninstall {
 		$this->delete_widget_categories( "widget_categories" );
 		$this->delete_widget_meta( "widget_meta" );
 		$this->delete_widget_pages( "widget_pages" );
+		$this->delete_widget_recent_posts( "widget_recent-posts" );
 		$this->delete_widget_tag_cloud( "widget_tag_cloud" );
 	}
 
@@ -163,6 +164,37 @@ class WP_Widget_Extensions_Uninstall {
 					unset(
 						$value["depth"]
 					);
+				}
+				$update_array[$key] = $value;
+			}
+			update_option( $option, $update_array );
+		}
+	}
+
+	/**
+	 * Delete Widget Recent Posts Option.
+	 *
+	 * @version 1.7.0
+	 * @since   1.7.0
+	 * @param   string $option
+	 */
+	private function delete_widget_recent_posts ( $option ) {
+		if ( get_option( $option ) ) {
+			$widget_array = get_option( $option );
+			$update_array = array();
+			// custom post
+			$args = array(
+				'public'   => true,
+				'_builtin' => false
+			);
+			$post_types = get_post_types( $args, 'objects' );
+
+			foreach ( $widget_array as $key => $value ) {
+				if ( is_array( $value ) ) {
+					foreach ( $post_types as $post_type ) {
+						unset( $value[$post_type->name] );
+					}
+					unset( $value['post'] );
 				}
 				$update_array[$key] = $value;
 			}
