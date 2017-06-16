@@ -80,7 +80,7 @@ class WP_Widget_Extensions {
 	/**
 	 * Widget Register.
 	 *
-	 * @version 1.6.0
+	 * @version 1.7.0
 	 * @since   1.0.0
 	 */
 	public function widget_init () {
@@ -89,6 +89,7 @@ class WP_Widget_Extensions {
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-categories.php' );
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-meta.php' );
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-pages.php' );
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-recent-posts.php' );
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/wp-widget-extensions-tag-cloud.php' );
 	}
 }
