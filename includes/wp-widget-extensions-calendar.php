@@ -3,7 +3,7 @@
  * Admin Widget Register
  *
  * @author  Kazuya Takami
- * @version 1.6.0
+ * @version 2.0.0
  * @since   1.6.0
  * @see     /wp-includes/widgets/class-wp-widget-calendar.php
  */
@@ -24,7 +24,7 @@ class WP_Widget_Extensions_Calendar extends WP_Widget_Calendar {
 	/**
 	 * Widget Form Display.
 	 *
-	 * @version 1.6.0
+	 * @version 2.0.0
 	 * @since   1.6.0
 	 * @access  public
 	 * @param   array $instance
@@ -109,12 +109,23 @@ class WP_Widget_Extensions_Calendar extends WP_Widget_Calendar {
 			__( 'Sunday Font Color :' , $this->text_domain ),
 			$field_name
 		);
+
+		/**
+		 * Target Element
+		 */
+		$field_name = 'target';
+		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = "all"; }
+		$form->select_target(
+			$this->get_field_id( $field_name ),
+			$this->get_field_name( $field_name ),
+			$instance[ $field_name ]
+		);
 	}
 
 	/**
 	 * Widget Form Update.
 	 *
-	 * @version 1.6.0
+	 * @version 2.0.0
 	 * @since   1.6.0
 	 * @access  public
 	 * @param   array $new_instance
@@ -125,9 +136,10 @@ class WP_Widget_Extensions_Calendar extends WP_Widget_Calendar {
 		$instance = parent::update( $new_instance, $old_instance );
 
 		$instance['sat-background-color'] = sanitize_text_field( $new_instance['sat-background-color'] );
-		$instance['sat-font-color'] = sanitize_text_field( $new_instance['sat-font-color'] );
+		$instance['sat-font-color']       = sanitize_text_field( $new_instance['sat-font-color'] );
 		$instance['sun-background-color'] = sanitize_text_field( $new_instance['sun-background-color'] );
-		$instance['sun-font-color'] = sanitize_text_field( $new_instance['sun-font-color'] );
+		$instance['sun-font-color']       = sanitize_text_field( $new_instance['sun-font-color'] );
+		$instance['target']               = sanitize_text_field( $new_instance['target'] );
 
 		return (array) $instance;
 	}
@@ -135,13 +147,20 @@ class WP_Widget_Extensions_Calendar extends WP_Widget_Calendar {
 	/**
 	 * Widget Display.
 	 *
-	 * @version 1.6.0
+	 * @version 2.0.0
 	 * @since   1.6.0
 	 * @access  public
 	 * @param   array $args
 	 * @param   array $instance
 	 */
 	public function widget ( $args, $instance ) {
+		if ( is_user_logged_in() && isset( $instance['target'] ) && $instance['target'] === 'logout' ) {
+			return;
+		}
+		if ( !is_user_logged_in() && isset( $instance['target'] ) && $instance['target'] === 'login' ) {
+			return;
+		}
+
 		parent::widget( $args, $instance );
 
 		wp_enqueue_script( 'jquery' );

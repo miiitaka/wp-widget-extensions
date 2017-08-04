@@ -158,10 +158,10 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 	 * @param   array $instance
 	 */
 	public function widget ( $args, $instance ) {
-		if ( is_user_logged_in() && $instance['target'] === 'logout' ) {
+		if ( is_user_logged_in() && isset( $instance['target'] ) && $instance['target'] === 'logout' ) {
 			return;
 		}
-		if ( !is_user_logged_in() && $instance['target'] === 'login' ) {
+		if ( !is_user_logged_in() && isset( $instance['target'] ) && $instance['target'] === 'login' ) {
 			return;
 		}
 

@@ -1,18 +1,17 @@
 <?php
 /**
- * Admin Widget Register ( Search Widget )
+ * Admin Widget Register
  *
  * @author  Kazuya Takami
  * @version 2.0.0
  * @since   2.0.0
- * @see     /wp-includes/widgets/class-wp-widget-search.php
- * @see     wp-widget-extensions-form-build.php
+ * @see     /wp-includes/widgets/class-wp-nav-menu-widget.php
  */
 
-unregister_widget( 'WP_Widget_Search' );
-register_widget( 'WP_Widget_Extensions_Search' );
+unregister_widget( 'WP_Nav_Menu_Widget' );
+register_widget( 'WP_Widget_Extensions_Nav_Menu' );
 
-class WP_Widget_Extensions_Search extends WP_Widget_Search {
+class WP_Widget_Extensions_Nav_Menu extends WP_Nav_Menu_Widget {
 
 	/**
 	 * Widget Form Display.
@@ -31,7 +30,6 @@ class WP_Widget_Extensions_Search extends WP_Widget_Search {
 
 		echo '<hr>';
 		echo '<p><strong>[ Plugin: WordPress Default Widget Extension ]</strong></p>';
-		echo '<p>';
 
 		/**
 		 * Target Element

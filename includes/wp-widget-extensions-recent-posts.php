@@ -3,7 +3,7 @@
  * Admin Widget Register
  *
  * @author  Kazuya Takami
- * @version 1.7.0
+ * @version 2.0.0
  * @since   1.7.0
  * @see     /wp-includes/widgets/class-wp-widget-recent-post.php
  */
@@ -24,7 +24,7 @@ class WP_Widget_Extensions_Recent_Posts extends WP_Widget_Recent_Posts {
 	/**
 	 * Widget Form Display.
 	 *
-	 * @version 1.7.0
+	 * @version 2.0.0
 	 * @since   1.7.0
 	 * @access  public
 	 * @param   array $instance
@@ -54,13 +54,23 @@ class WP_Widget_Extensions_Recent_Posts extends WP_Widget_Recent_Posts {
 			);
 			echo '<br />';
 		}
-		echo '<hr>';
+
+		/**
+		 * Target Element
+		 */
+		$field_name = 'target';
+		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = "all"; }
+		$form->select_target(
+			$this->get_field_id( $field_name ),
+			$this->get_field_name( $field_name ),
+			$instance[ $field_name ]
+		);
 	}
 
 	/**
 	 * Widget Form Update.
 	 *
-	 * @version 1.7.0
+	 * @version 2.0.0
 	 * @since   1.7.0
 	 * @access  public
 	 * @param   array $new_instance
@@ -76,6 +86,7 @@ class WP_Widget_Extensions_Recent_Posts extends WP_Widget_Recent_Posts {
 			$field_name = esc_html( $post_type->name );
 			$instance[ $field_name ] = $new_instance[ $field_name ] ? 1 : 0;
 		}
+		$instance['target'] = sanitize_text_field( $new_instance['target'] );
 
 		return (array) $instance;
 	}
@@ -111,13 +122,20 @@ class WP_Widget_Extensions_Recent_Posts extends WP_Widget_Recent_Posts {
 	/**
 	 * Widget Display.
 	 *
-	 * @version 1.7.0
+	 * @version 2.0.0
 	 * @since   1.7.0
 	 * @access  public
 	 * @param   array $args
 	 * @param   array $instance
 	 */
 	public function widget ( $args, $instance ) {
+		if ( is_user_logged_in() && isset( $instance['target'] ) && $instance['target'] === 'logout' ) {
+			return;
+		}
+		if ( !is_user_logged_in() && isset( $instance['target'] ) && $instance['target'] === 'login' ) {
+			return;
+		}
+
 		$this->instance = $instance;
 
 		add_filter( 'widget_posts_args', array( $this, 'widget_recent_posts_args' ) );
