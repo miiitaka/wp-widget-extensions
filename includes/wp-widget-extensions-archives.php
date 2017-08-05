@@ -3,7 +3,7 @@
  * Admin Widget Register
  *
  * @author  Kazuya Takami
- * @version 1.5.1
+ * @version 2.0.0
  * @since   1.0.0
  * @see     /wp-includes/widgets/class-wp-widget-archives.php
  */
@@ -87,12 +87,23 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 			$instance[ $field_name ],
 			__( 'Number of archives to show:', $this->text_domain )
 		);
+
+		/**
+		 * Target Element
+		 */
+		$field_name = 'target';
+		if ( !isset( $instance[ $field_name ] ) ) { $instance[ $field_name ] = "all"; }
+		$form->select_target(
+			$this->get_field_id( $field_name ),
+			$this->get_field_name( $field_name ),
+			$instance[ $field_name ]
+		);
 	}
 
 	/**
 	 * Widget Form Update.
 	 *
-	 * @version 1.0.0
+	 * @version 2.0.0
 	 * @since   1.0.0
 	 * @access  public
 	 * @param   array $new_instance
@@ -102,9 +113,10 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 	public function update ( $new_instance, $old_instance ) {
 		$instance = parent::update( $new_instance, $old_instance );
 
-		$instance['type']  = sanitize_text_field( $new_instance['type'] );
-		$instance['order'] = sanitize_text_field( $new_instance['order'] );
-		$instance['limit'] = (int) $new_instance['limit'];
+		$instance['type']   = sanitize_text_field( $new_instance['type'] );
+		$instance['order']  = sanitize_text_field( $new_instance['order'] );
+		$instance['limit']  = (int) $new_instance['limit'];
+		$instance['target'] = sanitize_text_field( $new_instance['target'] );
 
 		return (array) $instance;
 	}
@@ -139,13 +151,20 @@ class WP_Widget_Extensions_Archives extends WP_Widget_Archives {
 	/**
 	 * Widget Display.
 	 *
-	 * @version 1.0.0
+	 * @version 2.0.0
 	 * @since   1.0.0
 	 * @access  public
 	 * @param   array $args
 	 * @param   array $instance
 	 */
 	public function widget ( $args, $instance ) {
+		if ( is_user_logged_in() && isset( $instance['target'] ) && $instance['target'] === 'logout' ) {
+			return;
+		}
+		if ( !is_user_logged_in() && isset( $instance['target'] ) && $instance['target'] === 'login' ) {
+			return;
+		}
+
 		$this->instance = $instance;
 
 		$d = ! empty( $instance['dropdown'] ) ? '1' : '0';

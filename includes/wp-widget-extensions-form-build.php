@@ -3,11 +3,19 @@
  * Admin Widget Form Build
  *
  * @author  Kazuya Takami
- * @version 1.6.0
+ * @version 2.0.0
  * @since   1.1.0
  */
 
 class WP_Widget_Extensions_Form_Build {
+
+	/**
+	 * Variable definition.(Text Domain)
+	 *
+	 * @version 2.0.0
+	 * @since   2.0.0
+	 */
+	private $text_domain = 'wp-widget-extentions';
 
 	/**
 	 * Widget Form Checkbox.
@@ -115,6 +123,31 @@ class WP_Widget_Extensions_Form_Build {
 			}
 		}
 		echo '</select></p>';
+	}
+
+	/**
+	 * Widget Form Select.(target)
+	 *
+	 * @version 2.0.0
+	 * @since   2.0.0
+	 * @access  private
+	 * @param   string  $id
+	 * @param   string  $name
+	 * @param   boolean $value
+	 */
+	public function select_target ( $id, $name, $value ) {
+		$args = array(
+			"all"    => __( "All Users",        $this->text_domain ),
+			"login"  => __( "Logged-in users",  $this->text_domain ),
+			"logout" => __( "Logged-out users", $this->text_domain )
+		);
+		$this->select(
+			$id,
+			$name,
+			$value,
+			__( 'Widget display target:', $this->text_domain ),
+			$args
+		);
 	}
 
 }
