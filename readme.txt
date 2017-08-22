@@ -1,9 +1,9 @@
 === WordPress Default Widget Extension ===
 Contributors: miiitaka
-Tags: widget, category, archive, tag, meta
+Tags: widget, categories, archive, tag, meta, calendar, custom menu, page, comment, post, rss, search, text
 Requires at least: 4.5.2
-Tested up to: 4.8.0
-Stable tag: 1.7.0
+Tested up to: 4.8.1
+Stable tag: 2.0.0
 
 Plug-ins that extend the standard of the widget function.
 
@@ -16,34 +16,61 @@ Plug-ins that extend the standard of the widget function.
 * Changing the units of the archive
 * Ascending / Descending order change
 * Number of archive to show
+* Login / Logout / Show All Selection
 
 = Calendar Widget =
 
 * Change background color and character color on Saturday · Sunday
+* Login / Logout / Show All Selection
 
 = Categories Widget =
 
 * Criteria change of the sort (Name order / Post Count order)
 * Ascending / Descending order change
 * Exclusion category ids
+* Login / Logout / Show All Selection
 
 = Meta Widget =
 
 * Enabled / Disabled select
 * View Custom Post RSS
+* Login / Logout / Show All Selection
+
+= Custom Menu Widget =
+
+* Login / Logout / Show All Selection
 
 = Pages Widget =
 
 * Hierarchy of pages select
+* Login / Logout / Show All Selection
+
+= Recent Comments Widget =
+
+* Login / Logout / Show All Selection
 
 = Recent Posts Widget =
 
 * Post type select
+* Login / Logout / Show All Selection
+
+= RSS Widget =
+
+* Login / Logout / Show All Selection
+
+= Search Widget =
+
+* Login / Logout / Show All Selection
 
 = Tag Cloud Widget =
 
 * Criteria change of the sort (Name order / Tag Count order)
 * Ascending / Descending order change
+* Login / Logout / Show All Selection
+
+= Text Widget =
+
+* Login / Logout / Show All Selection
 
 == Installation ==
 
@@ -64,6 +91,10 @@ Plug-ins that extend the standard of the widget function.
 5. Page Widget（ Added: Hierarchy )
 
 == Changelog ==
+
+= 2.0.0 (2017-08-22) =
+* Added : Set to hide when logging in.(All Widget)
+* Check : WordPress version 4.8.1 operation check.
 
 = 1.7.0 (2017-06-16) =
 * Added : Widget Recent Posts select post type.
