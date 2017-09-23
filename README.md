@@ -70,6 +70,9 @@ Plug-ins that extend the standard of the widget function.
 
 ## Changelog
 
+### 2.0.1 (2017-09-22)
+- Check : WordPress version 4.8.2 operation check.
+
 ### 2.0.0 (2017-08-22)
 - Added : Set to hide when logging in.(All Widget)
 - Check : WordPress version 4.8.1 operation check.
