@@ -2,8 +2,8 @@
 Contributors: miiitaka
 Tags: widget, categories, archive, tag, meta, calendar, custom menu, page, comment, post, rss, search, text
 Requires at least: 4.5.2
-Tested up to: 4.8.2
-Stable tag: 2.0.1
+Tested up to: 4.8.3
+Stable tag: 2.0.2
 
 Plug-ins that extend the standard of the widget function.
 
@@ -91,6 +91,9 @@ Plug-ins that extend the standard of the widget function.
 5. Page Widget（ Added: Hierarchy )
 
 == Changelog ==
+
+= 2.0.2 (2017-11-02) =
+* Check : WordPress version 4.8.3 operation check.
 
 = 2.0.1 (2017-09-22) =
 * Check : WordPress version 4.8.2 operation check.
