@@ -70,6 +70,9 @@ Plug-ins that extend the standard of the widget function.
 
 ## Changelog
 
+### 2.0.2 (2017-11-28)
+- Check : WordPress version 4.9.0 operation check.
+
 ### 2.0.2 (2017-11-02)
 - Check : WordPress version 4.8.3 operation check.
 
