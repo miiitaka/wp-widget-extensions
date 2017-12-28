@@ -3,7 +3,7 @@
 Plugin Name: WordPress Default Widget Extension
 Plugin URI: https://github.com/miiitaka/wp-widget-extensions
 Description: Plug-ins that extend the standard of the widget function.
-Version: 2.0.3
+Version: 2.0.4
 Author: Kazuya Takami
 Author URI: https://www.terakoya.work/
 License: GPLv2 or later
@@ -151,20 +151,17 @@ class WP_Widget_Extensions {
 	/**
 	 * Add Menu to the Admin Screen.
 	 *
-	 * @version 2.0.0
+	 * @version 2.0.4
 	 * @since   2.0.0
 	 */
 	public function admin_menu () {
-		$list_page = add_menu_page(
+		add_menu_page(
 			esc_html__( 'Widget Extension', $this->text_domain ),
 			esc_html__( 'Widget Extension', $this->text_domain ),
 			'manage_options',
 			plugin_basename( __FILE__ ),
 			array( $this, 'list_page_render' )
 		);
-
-		/** Using registered $page handle to hook stylesheet loading */
-		//add_action( 'admin_print_styles-'  . $list_page, array( $this, 'add_style' ) );
 	}
 
 	/**

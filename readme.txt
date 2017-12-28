@@ -2,8 +2,8 @@
 Contributors: miiitaka
 Tags: widget, categories, archive, tag, meta, calendar, custom menu, page, comment, post, rss, search, text
 Requires at least: 4.5.2
-Tested up to: 4.9.0
-Stable tag: 2.0.3
+Tested up to: 4.9.1
+Stable tag: 2.0.4
 
 Plug-ins that extend the standard of the widget function.
 
@@ -92,7 +92,11 @@ Plug-ins that extend the standard of the widget function.
 
 == Changelog ==
 
-= 2.0.2 (2017-11-28) =
+= 2.0.4 (2017-12-28) =
+* Check : WordPress version 4.9.1 operation check.
+* Added : Information display after update.
+
+= 2.0.3 (2017-11-28) =
 * Check : WordPress version 4.9.0 operation check.
 
 = 2.0.2 (2017-11-02) =
