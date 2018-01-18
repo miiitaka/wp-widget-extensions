@@ -70,6 +70,9 @@ Plug-ins that extend the standard of the widget function.
 
 ## Changelog
 
+### 2.0.5 (2018-01-18)
+- Check : WordPress version 4.9.2 operation check.
+
 ### 2.0.4 (2017-12-28)
 - Check : WordPress version 4.9.1 operation check.
 - Added : Information display after update.
