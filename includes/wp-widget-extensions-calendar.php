@@ -193,8 +193,8 @@ class WP_Widget_Extensions_Calendar extends WP_Widget_Calendar {
 	 * @version 1.6.0
 	 * @since   1.6.0
 	 * @access  private
-	 * @param   string $args
-	 * @param   array  $instance
+	 * @param   integer $widget_id
+	 * @param   array   $instance
 	 */
 	private function set_color_style( $widget_id, $instance ) {
 		$html = '<style>';
