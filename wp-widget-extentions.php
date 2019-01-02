@@ -3,7 +3,7 @@
 Plugin Name: WordPress Default Widget Extension
 Plugin URI: https://github.com/miiitaka/wp-widget-extensions
 Description: Plug-ins that extend the standard of the widget function.
-Version: 2.0.7
+Version: 2.1.0
 Author: Kazuya Takami
 Author URI: https://www.terakoya.work/
 License: GPLv2 or later
