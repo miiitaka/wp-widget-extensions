@@ -92,7 +92,7 @@ Plug-ins that extend the standard of the widget function.
 
 == Changelog ==
 
-= 2.1.0 (2019-01-02)
+= 2.1.0 (2019-01-02) =
 * Check : WordPress version 5.0.2 operation check.
 * Check : WordPress version 5.0.1 operation check.
 * Check : WordPress version 5.0.0 operation check.
